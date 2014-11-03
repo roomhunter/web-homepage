@@ -1,4 +1,2 @@
-RentAbroad-Web
+RoomHunter Homepage
 ==============
-
-和出国的同学一起：发现舒适的住房，找到志趣相投的室友，开启留学的幸福生活

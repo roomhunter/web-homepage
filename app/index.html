@@ -2,9 +2,10 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>美国留学租房</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon-blue.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -29,7 +30,7 @@
           <li><a href="#">登录</a></li>
           <li><a href="#">帮助</a></li>
         </ul>
-        <h3 class="logo"><img src="images/invision.png"></h3>
+        <h3 class="logo"><img src="images/v3-white.png"></h3>
 
       </div>
     </div>
@@ -46,14 +47,13 @@
       <div class="search-area" ng-app="UniversityLocatorApp">
         <div class="head-line">
           <h1>欢迎回家</h1>
-          <h4>找到志趣相投的室友, 发现诚心如意的住房</h4>
+          <h4>找到志趣相投的室友, 发现称心如意的住房</h4>
         </div>
         <div class="input-group university-input" ng-controller="MainCtrl">
           <!-- <pre>Model: {{selected | json}}</pre> -->
 
-          <input type="text" placeholder="输入我要去的学校，找到周边住房" ng-model="selected" typeahead="university for university in universities | filter:$viewValue | limitTo:8" class="form-control">
+          <input type="text" class="form-control university-typeahead" placeholder="输入我要去的学校，找到周边住房" ng-model="selected" typeahead="university for university in universities | filter:$viewValue | limitTo:8">
 
-          <!-- <input type="text" class="form-control"> -->
           <span class="input-group-btn">
             <button class="btn btn-success" type="button">我要去</button>
           </span>
@@ -145,18 +145,12 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/angular/angular.js"></script>
-    <script src="bower_components/angular-resource/angular-resource.js"></script>
-    <script src="bower_components/angular-cookies/angular-cookies.js"></script>
-    <script src="bower_components/angular-animate/angular-animate.js"></script>
-    <script src="bower_components/angular-touch/angular-touch.js"></script>
-    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+    <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
-    <script src="scripts/controllers/main.js"></script>
     <!-- endbuild -->
 </body>
 </html>

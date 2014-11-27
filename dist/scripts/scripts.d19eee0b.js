@@ -1,0 +1,1 @@
+"use strict";angular.module("UniversityLocatorApp",["ngAnimate","ngTouch","ngAnimate","ui.bootstrap"]),angular.module("UniversityLocatorApp").controller("MainCtrl",["$scope",function(a){a.universities=["Columbia University","New York University"],a.awesomeThings=["HTML5 Boilerplate","AngularJS","Karma"]}]);

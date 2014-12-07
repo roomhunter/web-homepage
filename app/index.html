@@ -5,7 +5,7 @@
     <title>美国留学租房</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon-blue.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon-cyan.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
@@ -20,105 +20,134 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+    <div class="s1-wrapper">
+      <div class="container">
+        <div class="header">
+          <ul class="nav navbar-nav navbar-right">
+            <!-- <li class="active"><a ng-href="#">Home</a></li> -->
+            <li><a href="#">注册</a></li>
+            <li><a href="#">登录</a></li>
+            <li><a href="#">帮助</a></li>
+          </ul>
+          <h3 class="logo"><img src="images/v3-white.png"></h3>
 
-    <!-- Add your site or application content here -->
-    <div class="container">
-      <div class="header">
-        <ul class="nav navbar-nav navbar-right">
-          <!-- <li class="active"><a ng-href="#">Home</a></li> -->
-          <li><a href="#">注册</a></li>
-          <li><a href="#">登录</a></li>
-          <li><a href="#">帮助</a></li>
-        </ul>
-        <h3 class="logo"><img src="images/v3-white.png"></h3>
+        </div>
+      </div>
 
+      <div class="caption">
+        <div class="video">
+          <video autoplay loop="loop" preload="auto" id="pretzel-video">
+            <source src="https://a0.muscache.com/airbnb/static/SanFrancisco-P1-1.mp4" type='video/mp4'>
+            <source src="https://a0.muscache.com/airbnb/static/SanFrancisco-P1-0.webm" type='video/webm'>
+          </video>
+        </div>
+
+
+        <div class="search-area">
+          <div class="head-line">
+            <h1>欢迎回家</h1>
+            <h4>找到志趣相投的室友, 发现称心如意的住房</h4>
+          </div>
+          <div class="input-group university-input" ng-controller="MainCtrl">
+            <!-- <pre>Model: {{selected | json}}</pre> -->
+
+            <input id="search-str" type="text" class="form-control university-typeahead" placeholder="输入我要去的学校，找到周边住房">
+
+            <span class="input-group-btn">
+              <button class="btn btn-cyan-theme" type="button" id="search-btn">我要去</button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="most-popular">
+      <div class="container">
+        <h2>Most Popular Schools</h2>
+        <div class="row">
+          <div class="col-md-3">
+            <a href="//app.roomhunter.us/#/li/columbia" class="popular-university-container columbia-card">
+              <!--<h4 class="school-name">Columbia University</h4>-->
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="//app.roomhunter.us/#/li/nyu" class="popular-university-container nyu-card">
+              <!--<h4 class="school-name">New York University</h4>-->
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="//app.roomhunter.us/#/li/stony" class="popular-university-container stony-card">
+              <!--<h4 class="school-name">Stony Brook University</h4>-->
+            </a>
+          </div>
+          <div class="col-md-3">
+            <a href="//app.roomhunter.us/#/li/cuny" class="popular-university-container cuny-card">
+              <!--<h4 class="school-name">City University of New York</h4>-->
+            </a>
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="caption">
-      <div class="video">
-        <video autoplay loop="loop" preload="auto" id="pretzel-video">
-          <source src="https://a0.muscache.com/airbnb/static/SanFrancisco-P1-1.mp4" type='video/mp4'>
-          <source src="https://a0.muscache.com/airbnb/static/SanFrancisco-P1-0.webm" type='video/webm'>
-        </video>
-      </div>
+      <!--<div class="story-block what-is">-->
+        <!--<div class="container">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-6">-->
+              <!--<h2>What is Room Hunter</h2>-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
 
+      <!--</div>-->
+      <!--<div class="story-block how-to-use">-->
+        <!--<div class="container">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-6">-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+              <!--<h2>How to use Room Hunter</h2>-->
+            <!--</div>-->
 
-      <div class="search-area" ng-app="UniversityLocatorApp">
-        <div class="head-line">
-          <h1>欢迎回家</h1>
-          <h4>找到志趣相投的室友, 发现称心如意的住房</h4>
-        </div>
-        <div class="input-group university-input" ng-controller="MainCtrl">
-          <!-- <pre>Model: {{selected | json}}</pre> -->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="story-block why-we-do">-->
+        <!--<div class="container">-->
+          <!--<div class="row">-->
 
-          <input type="text" class="form-control university-typeahead" placeholder="输入我要去的学校，找到周边住房" ng-model="selected" typeahead="university for university in universities | filter:$viewValue | limitTo:8">
+            <!--<div class="col-md-6">-->
+              <!--<h2>Why we make Room Hunter</h2>-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+            <!--</div>-->
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
+      <!--<div class="story-block who-we-are">-->
+        <!--<div class="container">-->
+          <!--<div class="row">-->
+            <!--<div class="col-md-6">-->
+            <!--</div>-->
+            <!--<div class="col-md-6">-->
+              <!--<h2>Who we are</h2>-->
+            <!--</div>-->
 
-          <span class="input-group-btn">
-            <button class="btn btn-success" type="button">我要去</button>
-          </span>
-        </div>
-      </div>
-    </div>
-
-
-      <div class="story-block what-is">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-              <h2>What is Room Hunter</h2>
-            </div>
-            <div class="col-md-6">
-            </div>
-          </div>
-        </div>
-
-      </div>
-      <div class="story-block how-to-use">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-            </div>
-            <div class="col-md-6">
-              <h2>How to use Room Hunter</h2>
-            </div>
-
-          </div>
-        </div>
-      </div>
-      <div class="story-block why-we-do">
-        <div class="container">
-          <div class="row">
-
-            <div class="col-md-6">
-              <h2>Why we make Room Hunter</h2>
-            </div>
-            <div class="col-md-6">
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="story-block who-we-are">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-6">
-            </div>
-            <div class="col-md-6">
-              <h2>Who we are</h2>
-            </div>
-
-          </div>
-        </div>
-      </div>
+          <!--</div>-->
+        <!--</div>-->
+      <!--</div>-->
 
       <div class="footer">
         <div class="container">
 
           <p>
             <span class="glyphicon glyphicon-heart"></span>
-            by <a href="http://roomhunter.us">RoomHunter</a> team
+            by
+            <!--<a href="http://roomhunter.us">-->
+            RoomHunter
+            <!--</a> -->
+            LLC.
           </p>
-          <!-- <p>租房猎人团队倾情奉献</p> -->
         </div>
       </div>
     </div>

@@ -40,7 +40,14 @@ var nameToLink = {
   'City University of New York': 'cuny'
 };
 
-var appHost = 'http://app.roomhunter.us';
+var appHost;
+
+if(location.hostname === 'roomhunter.us' || location.hostname === 'www.roomhunter.us') {
+  appHost = 'http://app.roomhunter.us';
+}
+else {
+  appHost = 'http://' + location.hostname + ':2001';
+}
 
 $( document ).ready(function($) {
   $('.university-typeahead').typeahead({
@@ -55,5 +62,9 @@ $( document ).ready(function($) {
   });
   $('#search-btn').click(function(e){
     window.location = appHost + '/#/li/' + nameToLink[$('#search-str').val()];
+  });
+  $('a.popular-university-container').click(function(e){
+    e.preventDefault();
+    window.location = appHost + $(this).attr('href');
   });
 });

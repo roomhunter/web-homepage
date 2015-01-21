@@ -60,7 +60,7 @@ $( document ).ready(function($) {
     displayKey: 'value',
     source: substringMatcher(universities)
   });
-  $('#search-btn').click(function(e){
+  $('#search-btn').click(function(){
     window.location = appHost + '/#/li/' + nameToLink[$('#search-str').val()];
   });
   $('a.popular-university-container').click(function(e){

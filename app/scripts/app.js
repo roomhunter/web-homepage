@@ -1,13 +1,5 @@
 'use strict';
 
-/**
- * @ngdoc overview
- * @name UniversityLocatorApp
- * @description
- * # UniversityLocatorApp
- *
- * Main module of the application.
- */
 var substringMatcher = function(strs) {
   return function findMatches(q, cb) {
     var matches, substrRegex;
@@ -32,37 +24,58 @@ var substringMatcher = function(strs) {
   };
 };
 
-var universities = ['Columbia University', 'New York University', 'Stony Brook University', 'City University of New York'];
-var nameToLink = {
+var universitiesMap = {
   'Columbia University': 'columbia',
   'New York University': 'nyu',
   'Stony Brook University': 'stony',
   'City University of New York': 'cuny'
 };
 
-var appHost;
+var appHost = 'http://app.roomhunter.us';
 
-if(location.hostname === 'roomhunter.us' || location.hostname === 'www.roomhunter.us') {
-  appHost = 'http://app.roomhunter.us';
-}
-else {
+if(location.hostname !== 'roomhunter.us' && location.hostname !== 'www.roomhunter.us') {
   appHost = 'http://' + location.hostname + ':2001';
 }
 
 $( document ).ready(function($) {
+
   $('.university-typeahead').typeahead({
     hint: true,
     highlight: true,
     minLength: 1
   },
   {
-    name: 'states',
+    name: 'schools',
     displayKey: 'value',
-    source: substringMatcher(universities)
+    source: substringMatcher(Object.keys(universitiesMap)),
+    templates: {
+      empty: [
+        '<div class="tt-empty-message text-muted">',
+        '<i class="fa fa-frown-o"></i>',
+        'unable to find any schools matching current query',
+        '</div>'
+      ].join('\n')
+    }
   });
-  $('#search-btn').click(function(){
-    window.location = appHost + '/#/li/' + nameToLink[$('#search-str').val()];
+
+  $('#search-str').change(function(){
+    var input = $('#search-str');
+    var btn = $('#search-btn');
+
+    if(input.val() in universitiesMap) {
+      btn.attr('disabled', 'disabled');
+    }
+    else {
+      btn.removeAttr('disabled');
+    }
   });
+
+  $('#query-form').submit(function(e){
+    e.preventDefault();
+    //console.log($('#search-str').val());
+    window.location = appHost + '/#/li/' + universitiesMap[$('#search-str').val()];
+  });
+
   $('a.popular-university-container').click(function(e){
     e.preventDefault();
     window.location = appHost + $(this).attr('href');

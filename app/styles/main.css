@@ -59,15 +59,17 @@
   /*height: 400px;*/
   text-align: center;
   color: white;
-  font-weight: bold;
   padding-top: 40px;
 }
 .search-area h1 {
   font-size: 46px;
+
 }
 
 .head-line {
   margin-bottom: 50px;
+  font-weight: bold;
+
 }
 
 .university-input {

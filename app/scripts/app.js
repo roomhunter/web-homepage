@@ -62,9 +62,14 @@ $( document ).ready(function($) {
 
   inputTypeahead
     .on('typeahead:selected', function(){
-      console.log('autocomplete');
-      var btn = $('#search-btn');
-      btn.removeClass('disabled');
+      var input = $('#search-str').val();
+      var url = universityMap[input];
+
+      if(!url) {
+        return false;
+      }
+
+      window.location = appHost + '/#/li/' + url;
   })
     .on('typeahead:cursorchanged', function () {
       console.log($('#search-str').val());

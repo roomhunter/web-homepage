@@ -71,7 +71,22 @@ $( document ).ready(function($) {
       console.log('autocomplete');
       var btn = $('#search-btn');
       btn.removeClass('disabled');
-  });
+  })
+    .on('typeahead:closed', function () {
+      var input = $('#search-str').val();
+      var btn = $('#search-btn');
+      var url = universityMap[input];
+
+      if(!url) {
+        console.log('invalid');
+
+        btn.addClass('disabled');
+      }
+      else {
+        console.log('valid');
+        btn.removeClass('disabled');
+      }
+    });
 
   inputTypeahead.keyup(function () {
     var input = $('#search-str').val();

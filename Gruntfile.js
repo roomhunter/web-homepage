@@ -196,8 +196,8 @@ module.exports = function (grunt) {
 
     // Performs rewrites based on filerev and the useminPrepare configuration
     usemin: {
-      html: ['<%= path.dist %>/*.html'],
-      css: ['<%= path.dist %>/styles/*.css'],
+      html: '<%= path.dist %>/*.html',
+      css: '<%= path.dist %>/styles/*.css',
       options: {
         assetsDirs: ['<%= path.dist %>','<%= path.dist %>/images']
       }
@@ -245,6 +245,11 @@ module.exports = function (grunt) {
             '.htaccess',
             '*.html'
           ]
+        },{
+          expand: true,
+          cwd: 'bower_components/font-awesome/fonts',
+          dest: '<%= path.dist %>/fonts',
+          src: '*.{ttf,woff}'
         }
         ]
       },

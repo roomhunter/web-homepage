@@ -24,12 +24,14 @@ var substringMatcher = function(strs) {
   };
 };
 
-var universitiesMap = {
+var universityMap = {
   'Columbia University': 'columbia',
   'New York University': 'nyu',
   'Stony Brook University': 'stony',
   'City University of New York': 'cuny'
 };
+
+//var universityArray =
 
 var appHost = 'http://app.roomhunter.us';
 
@@ -39,7 +41,7 @@ if(location.hostname !== 'roomhunter.us' && location.hostname !== 'www.roomhunte
 
 $( document ).ready(function($) {
 
-  $('.university-typeahead').typeahead({
+  var inputTypeahead = $('#search-str').typeahead({
     hint: true,
     highlight: true,
     minLength: 1
@@ -47,7 +49,7 @@ $( document ).ready(function($) {
   {
     name: 'schools',
     displayKey: 'value',
-    source: substringMatcher(Object.keys(universitiesMap)),
+    source: substringMatcher(Object.keys(universityMap)),
     templates: {
       empty: [
         '<div class="tt-empty-message text-muted">',
@@ -58,22 +60,60 @@ $( document ).ready(function($) {
     }
   });
 
-  $('#search-str').change(function(){
-    var input = $('#search-str');
-    var btn = $('#search-btn');
-
-    if(input.val() in universitiesMap) {
-      btn.attr('disabled', 'disabled');
-    }
-    else {
-      btn.removeAttr('disabled');
-    }
+  inputTypeahead
+    .on('typeahead:selected', function(){
+      console.log('autocomplete');
+      var btn = $('#search-btn');
+      btn.removeClass('disabled');
+  })
+    .on('typeahead:cursorchanged', function () {
+      console.log($('#search-str').val());
+      console.log('autocomplete');
+      var btn = $('#search-btn');
+      btn.removeClass('disabled');
   });
 
+  inputTypeahead.keyup(function () {
+    var input = $('#search-str').val();
+    var btn = $('#search-btn');
+    var url = universityMap[input];
+
+    if(!url) {
+      console.log('invalid');
+
+      btn.addClass('disabled');
+    }
+    else {
+      console.log('valid');
+      btn.removeClass('disabled');
+    }
+  });
+  //.on('input', function(){
+  //  var input = $('#search-str').val();
+  //  var btn = $('#search-btn');
+  //  var url = universityMap[input];
+  //
+  //  if(!url) {
+  //    console.log('invalid');
+  //
+  //    btn.addClass('disabled');
+  //  }
+  //  else {
+  //    console.log('valid');
+  //    btn.removeClass('disabled');
+  //  }
+  //});
+
   $('#query-form').submit(function(e){
+    var input = $('#search-str').val();
+    var url = universityMap[input];
+
+    if(!url) {
+      return false;
+    }
+
     e.preventDefault();
-    //console.log($('#search-str').val());
-    window.location = appHost + '/#/li/' + universitiesMap[$('#search-str').val()];
+    window.location = appHost + '/#/li/' + url;
   });
 
   $('a.popular-university-container').click(function(e){

@@ -26,12 +26,21 @@
 .header h3 img{
   max-height: 40px;
 }
-.nav.navbar-nav.navbar-right li a {
+.rh-nav li a {
   color: white;
 }
-.nav.navbar-nav.navbar-right li a:hover {
+.rh-nav li a:hover, .rh-nav li a:focus {
   background: none;
+  color: #dedede;
 }
+
+.help-dropdown .divider {
+  margin: 5px 0;
+}
+.navbar-nav > li > .help-dropdown {
+  border-radius: 3px;
+}
+  /*.nav .help-contact*/
 .video {
   z-index: -1;
   position: absolute;

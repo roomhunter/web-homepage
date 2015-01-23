@@ -140,4 +140,12 @@ $( document ).ready(function($) {
     e.preventDefault();
     window.location = appHost + $(this).attr('href');
   });
+
+  $('.help-contact')
+    .mouseenter(function(){
+    $('.help-dropdown').addClass('show');
+  })
+    .mouseleave(function(){
+      $('.help-dropdown').removeClass('show');
+    });
 });

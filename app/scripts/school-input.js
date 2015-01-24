@@ -30,14 +30,15 @@ var universityMap = {
   'City University of New York': 'cuny'
 };
 
-var schoolInput = {
+var schoolInput;
+schoolInput = {
 
-  formSubmit: function() {
-    $('#query-form').submit(function(e){
+  formSubmit: function () {
+    $('#query-form').submit(function (e) {
       var input = $('#search-str').val();
       var url = universityMap[input];
 
-      if(!url) {
+      if (!url) {
         return false;
       }
 
@@ -46,8 +47,9 @@ var schoolInput = {
     });
 
   },
-  typeAhead: function() {
-    var inputTypeahead = $('#search-str').typeahead({
+  init: function (emptyMessage) {
+    $('#search-str').typeahead('destroy');
+    var input = $('#search-str').typeahead({
         hint: true,
         highlight: true,
         minLength: 1
@@ -60,18 +62,28 @@ var schoolInput = {
           empty: [
             '<div class="tt-empty-message text-muted">',
             '<i class="fa fa-frown-o"></i>',
-            'unable to find any schools matching current query',
+            emptyMessage,
             '</div>'
           ].join('\n')
         }
       });
+    return input;
+  },
+  typeAhead: function () {
+    var inputTypeahead = $('#search-str');
+    //if (localStorage.getItem('userLang') === 'en') {
+    //  inputTypeahead = schoolInput.init('unable to find any schools matching current query');
+    //}
+    //else {
+    //  inputTypeahead = schoolInput.init('无法找到匹配的学校');
+    //}
 
     inputTypeahead
-      .on('typeahead:selected', function(){
+      .on('typeahead:selected', function () {
         var input = $('#search-str').val();
         var url = universityMap[input];
 
-        if(!url) {
+        if (!url) {
           return false;
         }
 
@@ -88,7 +100,7 @@ var schoolInput = {
         var btn = $('#search-btn');
         var url = universityMap[input];
 
-        if(!url) {
+        if (!url) {
           console.log('invalid');
 
           btn.addClass('disabled');
@@ -104,7 +116,7 @@ var schoolInput = {
       var btn = $('#search-btn');
       var url = universityMap[input];
 
-      if(!url) {
+      if (!url) {
         console.log('invalid');
 
         btn.addClass('disabled');

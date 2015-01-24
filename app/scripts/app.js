@@ -3,8 +3,7 @@
 $( document ).ready(function() {
   langSwitch.initLang();
   langSwitch.buttonClicked();
-
-  helpContact.showHideDropdown();
   schoolInput.typeAhead();
   schoolInput.formSubmit();
+  helpContact.showHideDropdown();
 });

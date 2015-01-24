@@ -2,9 +2,9 @@
   "name": "roomhunter-homepage",
   "version": "0.0.1",
   "dependencies": {
-    "json3": "~3.3.1",
-    "es5-shim": "~3.1.0",
-    "bootstrap": "~3.2.0",
+    "json3": "~3.3.2",
+    "es5-shim": "~4.0.5",
+    "bootstrap": "~3.3.0",
     "jquery": ">=1.11",
     "typeahead.js": "~0.10.5",
     "font-awesome": "^4.2.0"

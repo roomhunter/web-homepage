@@ -1,16 +1,16 @@
 <!doctype html>
-<html class="no-js">
+<html class="no-js" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
-    <title>美国留学租房</title>
+    <title></title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" type="image/x-icon" href="favicon-cyan.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="bower_components/font-awesome/css/font-awesome.css" />
+    <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
@@ -25,22 +25,39 @@
       <div class="container">
         <div class="header">
           <ul class="nav navbar-nav navbar-right rh-nav">
-            <!--<li><a href="#">注册</a></li>-->
-            <!--<li><a href="#">登录</a></li>-->
-            <!--<li><a href="#">帮助</a></li>-->
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
+            <li class="lang-switch">
+              <a href="#" class="en hidden" id="switch-zh"><i class="fa fa-language"></i>&nbsp;中文</a>
+              <a href="#" class="zh invisible" id="switch-en"><i class="fa fa-language"></i>&nbsp;English</a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="en hidden">Register</span>
+                <span class="zh invisible">注册</span>
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                <span class="en hidden">Login</span>
+                <span class="zh invisible">登录</span>
+              </a>
+            </li>
             <li class="help-contact">
-              <a href="#">Help <i class="fa fa-caret-down"></i> </a>
+              <a href="#">
+                <span class="en hidden">Help</span>
+                <span class="zh invisible">帮助</span>
+                <i class="fa fa-caret-down"></i>
+              </a>
               <ul class="dropdown-menu help-dropdown" role="menu">
                 <li><img src="images/qr-sample.jpg" class="img-responsive"></li>
                 <li class="divider"></li>
-                <li class="text-center text-muted">Wechat customer service</li>
+                <li class="text-center text-muted">
+                  <span class="en hidden"> Wechat customer service</span>
+                  <span class="zh invisible">扫描客服微信</span>
+                </li>
               </ul>
             </li>
           </ul>
           <h3 class="logo"><img src="images/v3-white.png"></h3>
-
         </div>
       </div>
 
@@ -55,16 +72,23 @@
 
         <div class="search-area">
           <div class="head-line">
-            <!--<h1>欢迎回家</h1>-->
-            <!--<h4>找到志趣相投的室友, 发现称心如意的住房</h4>-->
-            <h1>Welcome Home</h1>
-            <h4>Meet congenial roommates, Find desirable apartments</h4>
+            <h1>
+              <span class="zh invisible">欢迎回家</span>
+              <span class="en hidden">Welcome Home</span>
+            </h1>
+            <h4>
+              <span class="zh invisible"> 找到志趣相投的室友, 发现称心如意的住房</span>
+              <span class="en hidden">Meet congenial roommates, Find desirable apartments</span>
+            </h4>
           </div>
           <div class="university-input" >
             <form id="query-form">
               <!--<input id="search-str" type="text" class="form-control university-typeahead" placeholder="输入我要去的学校，找到周边住房">-->
-              <input id="search-str" type="text" class="form-control university-typeahead" placeholder="I will go to...">
-              <button class="btn btn-blue" type="submit" id="search-btn">Go</button>
+              <input id="search-str" type="text" class="form-control university-typeahead" placeholder="">
+              <button class="btn btn-blue" type="submit" id="search-btn">
+                <span class="en hidden">Go</span>
+                <span class="zh invisible">搜索</span>
+              </button>
             </form>
           </div>
         </div>
@@ -72,26 +96,25 @@
     </div>
     <div class="most-popular">
       <div class="container">
-        <h2>Most Popular Schools</h2>
+        <h2>
+          <span class="en hidden">Most Popular Schools</span>
+          <span class="zh invisible">热门学校</span>
+        </h2>
         <div class="row">
           <div class="col-md-3">
             <a href="/#/li/columbia" class="popular-university-container columbia-card">
-              <!--<h4 class="school-name">Columbia University</h4>-->
             </a>
           </div>
           <div class="col-md-3">
             <a href="/#/li/nyu" class="popular-university-container nyu-card">
-              <!--<h4 class="school-name">New York University</h4>-->
             </a>
           </div>
           <div class="col-md-3">
             <a href="/#/li/stony" class="popular-university-container stony-card">
-              <!--<h4 class="school-name">Stony Brook University</h4>-->
             </a>
           </div>
           <div class="col-md-3">
             <a href="/#/li/cuny" class="popular-university-container cuny-card">
-              <!--<h4 class="school-name">City University of New York</h4>-->
             </a>
           </div>
         </div>
@@ -153,9 +176,7 @@
           <p>
             <i class="fa fa-heart"></i>
             by
-            <!--<a href="http://roomhunter.us">-->
             RoomHunter
-            <!--</a> -->
             LLC.
           </p>
         </div>
@@ -176,20 +197,25 @@
 
     <!-- build:js(.) scripts/oldieshim.js -->
     <!--[if lt IE 9]>
-    <script src="bower_components/es5-shim/es5-shim.js"></script>
-    <script src="bower_components/json3/lib/json3.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
-    <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/es5-shim/es5-shim.js"></script>
+    <script src="/bower_components/json3/lib/json3.js"></script>
+    <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
+    <script src="scripts/lang-switch.js"></script>
+    <script src="scripts/help-contact.js"></script>
+    <script src="scripts/school-input.js"></script>
     <!-- endbuild -->
 </body>
 </html>

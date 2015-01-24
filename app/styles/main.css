@@ -26,6 +26,9 @@
 .header h3 img{
   max-height: 40px;
 }
+/*.lang-switch {*/
+  /*border-right: 1px solid #FFF;*/
+/*}*/
 .rh-nav li a {
   color: white;
 }
@@ -78,7 +81,6 @@
 .head-line {
   margin-bottom: 50px;
   font-weight: bold;
-
 }
 
 .university-input {
@@ -311,4 +313,3 @@
   /*background-color: #69A1FD;*/
   /*cursor: not-allowed;*/
 /*}*/
-

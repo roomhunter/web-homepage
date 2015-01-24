@@ -6,10 +6,10 @@ var helpContact = {
     var dropdown = $('.help-dropdown');
     $('.help-contact')
       .mouseenter(function () {
-        dropdown.toggle();
+        dropdown.css('display', 'block');
       })
       .mouseleave(function () {
-        dropdown.toggle();
+        dropdown.css('display', 'none');
       })
       .click(function () {
         dropdown.toggle();

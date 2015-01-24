@@ -28,11 +28,13 @@ var langSwitch = {
     }
   },
   buttonClicked: function() {
-    $('#switch-zh').click(function () {
+    $('#switch-zh').click(function (e) {
+      e.preventDefault();
       localStorage.setItem('userLang', 'zh');
       langSwitch.toZh();
     });
-    $('#switch-en').click(function () {
+    $('#switch-en').click(function (e) {
+      e.preventDefault();
       localStorage.setItem('userLang', 'en');
       langSwitch.toEn();
     });

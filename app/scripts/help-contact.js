@@ -3,14 +3,16 @@
 var helpContact = {
 
   showHideDropdown: function() {
+    var dropdown = $('.help-dropdown');
     $('.help-contact')
       .mouseenter(function () {
-        $('.help-dropdown').addClass('show');
-
+        dropdown.toggle();
       })
       .mouseleave(function () {
-        $('.help-dropdown').removeClass('show');
-
-      });
+        dropdown.toggle();
+      })
+      .click(function () {
+        dropdown.toggle();
+      })
   }
 };

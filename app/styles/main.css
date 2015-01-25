@@ -313,3 +313,41 @@
   /*background-color: #69A1FD;*/
   /*cursor: not-allowed;*/
 /*}*/
+
+.signup-or-separator{background:none;height:34px;position:relative;text-align:center}.signup-or-separator .text{background-color:#FFF;display:inline-block;margin:0;padding:12px}.signup-or-separator hr{margin:-16px auto 10px auto;width:90%}
+
+.submit{
+  margin-left: auto;
+  margin-right: auto;
+  width: 200px;"
+}
+
+.submit-button{
+  width:130px;
+  background-color: #00A693;
+}
+.error-message{
+  color: #880000;
+  clear:both;
+  text-align: center;
+}
+
+.twoD-code-image{
+  width: 200px;
+  height: 200px;
+  }
+
+.pull-right{
+  float:right;
+}
+
+.loginOrRegister-content{
+  position: relative;
+  margin:0 auto;
+  width: 300px;
+}
+
+
+.modal-dialog{
+  width: 30%;
+}

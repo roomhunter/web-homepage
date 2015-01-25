@@ -34,7 +34,7 @@
     "test": "grunt test"
   },
   "repository": {
-  "type": "git",
-  "url": "git://github.com/roomhunter/web-homepage.git"
-}
+    "type": "git",
+    "url": "git://github.com/roomhunter/web-homepage.git"
+  }
 }

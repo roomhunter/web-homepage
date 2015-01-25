@@ -314,12 +314,28 @@
   /*cursor: not-allowed;*/
 /*}*/
 
-.signup-or-separator{background:none;height:34px;position:relative;text-align:center}.signup-or-separator .text{background-color:#FFF;display:inline-block;margin:0;padding:12px}.signup-or-separator hr{margin:-16px auto 10px auto;width:90%}
+.signup-or-separator {
+  background:none;
+  height:34px;
+  position:relative;
+  text-align:center
+}
+.signup-or-separator .text {
+  background-color:#FFF;
+  display:inline-block;
+  margin:0;
+  padding:12px
+}
+
+.signup-or-separator hr {
+  margin:-16px auto 10px auto;
+  width:90%
+}
 
 .submit{
   margin-left: auto;
   margin-right: auto;
-  width: 200px;"
+  width: 200px;
 }
 
 .submit-button{

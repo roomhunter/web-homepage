@@ -1,7 +1,6 @@
 'use strict';
 
 var helpContact = {
-
   showHideDropdown: function() {
     var dropdown = $('.help-dropdown');
     $('.help-contact')

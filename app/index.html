@@ -28,14 +28,201 @@
             <!--<li><a href="#">注册</a></li>-->
             <!--<li><a href="#">登录</a></li>-->
             <!--<li><a href="#">帮助</a></li>-->
-            <li><a href="#">Register</a></li>
-            <li><a href="#">Login</a></li>
+            <li class="oldLink"><a data-toggle="modal" href="#RegisterModal" data-backdrop="static">Register</a></li>
+            <li class="oldLink"><a data-toggle="modal" href="#LoginModal">Login</a></li>
+            <li class="newLink"><a></a></li>
             <li><a href="#">Help</a></li>
           </ul>
           <h3 class="logo"><img src="images/v3-white.png"></h3>
 
         </div>
       </div>
+
+
+      <!-- modal for register-->
+      <div class="modal fade" id="RegisterModal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close"
+                      data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title text-center" id="registerModalLabel">
+                Register</h4>
+              </div>
+            <div class="modal-body">
+              <div class="register-by-wechat text-center">
+               Register Using Wechat
+                <div class="img-circle" >
+                <img src="images/fake-2D-code.png" class="twoD-code-image">
+                  </div>
+                </div>
+              <div class="signup-or-separator">
+                <h6 class="shift text text-special">OR</h6>
+                <hr>
+                </div>
+              <div class="register-by-email">
+              <div class="text-center" style="margin-bottom: 10px">
+                <i class="glyphicon glyphicon-envelope"></i>
+                Register Using .edu Email
+                </div>
+                <div class="loginOrRegister-content">
+                  <form class="form-horizontal" action="/users/register" id="register-form" method="post" name="register-form">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="email" id="emailaddress" placeholder="Email">
+                      </div>
+                      </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="username" id="username" placeholder="Username">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="password" id="password" placeholder="Password">
+                      </div>
+                      <div class="error-message text-center">
+                        <span id="msg"></span>
+                        </div>
+                    </div>
+                    <div class="submit">
+                      <p style="text-align:center">
+                    <input id="register-submit" type="submit" class="btn btn-primary submit-button text-center" value="Register">
+                    <!--<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>-->
+                      </p>
+                    </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+                </div>
+              </div>
+        </div>
+
+
+
+
+      <!-- modal for login-->
+      <div class="modal fade" id="LoginModal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close"
+                      data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title text-center" id="LoginModalLabel">
+                Login</h4>
+            </div>
+            <div class="modal-body">
+              <div class="login-by-wechat text-center">
+                Login Using Wechat
+                <div class="img-circle">
+                  <img src="images/fake-2D-code.png" class="twoD-code-image">
+                </div>
+              </div>
+              <div class="signup-or-separator">
+                <h6 class="shift text text-special">OR</h6>
+                <hr>
+              </div>
+              <div class="login-by-email">
+                <div class="text-center">
+                  <i class="glyphicon glyphicon-envelope"></i>
+                  Login Using .edu Email
+                </div>
+                <div class="loginOrRegister-content">
+                  <form class="form-horizontal" action="/users/login" id="login-form" method="post">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" id="emailaddress1" name="email" placeholder="Email">
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" id="password1" name="password" placeholder="Password">
+                      </div>
+                      <div class="error-message text-center">
+                        <span id="msg2"></span>
+                      </div>
+                    </div>
+                      <label for="remember_me2" class='remember-me'>
+                        <input type="checkbox" name="remember_me" id="remember_me2" value="true" class="remember_me"/>
+                        Auto-login
+                      </label>
+                      <a href="#" class="forgot-password pull-right">Forget password？</a>
+                    <div class="submit">
+                      <p style="text-align: center">
+                      <input id="login-submit" type="submit" class="btn btn-primary submit-button" value="Login">
+                      <!--<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>-->
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+
+      <!-- modal for personal details  --->
+      <div class="modal fade" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close"
+                      data-dismiss="modal" aria-hidden="true">
+                &times;
+              </button>
+              <h4 class="modal-title text-center" id="registerModalLabel">
+                Congratulations! You have successfully registered for roomhunter. Now please fill in some personal information.</h4>
+            </div>
+            <div class="modal-body">
+              <div class="personal-information">
+                  <form class="form-horizontal" action="#" id="personal-form-1" method="post">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" id="firstname" placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" id="lastname" placeholder="Last Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" id="university" placeholder="University">
+                      </div>
+                      <div class="error-message text-center">
+                        <span id="msg3"></span>
+                      </div>
+                    </div>
+                    <div class="submit">
+                      <p style="text-align:center">
+                        <input id="information-1-submit" type="submit" class="btn btn-primary submit-button text-center" value="Next">
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
 
       <div class="caption">
         <div class="video">
@@ -180,7 +367,8 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
-    <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbower -->
     <!-- endbuild -->

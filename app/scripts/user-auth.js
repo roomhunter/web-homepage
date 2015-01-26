@@ -1,7 +1,6 @@
 'use strict';
 
-var userAuth;
-userAuth = {
+var userAuth = {
   userLabelClicked: function () {
     $('#user-label').click(function () {
       var t = localStorage.getItem('userToken');

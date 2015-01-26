@@ -2,6 +2,8 @@
 
 
 $( document ).ready(function() {
+  userAuth.initAuthViewWithCachedInfo();
+  userAuth.userLabelClicked();
 
   langSwitch.initLang();
   langSwitch.buttonClicked();

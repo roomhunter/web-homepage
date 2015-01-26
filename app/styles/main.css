@@ -9,14 +9,11 @@
   padding-right: 15px;
 }
 
-/* Custom page header */
 .header {
   padding: 20px;
   color: white;
   height: 100px;
-  /*margin-bottom: 0px;*/
 }
-/* Make the masthead heading the same height as the navigation */
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
@@ -26,9 +23,7 @@
 .header h3 img{
   max-height: 40px;
 }
-/*.lang-switch {*/
-  /*border-right: 1px solid #FFF;*/
-/*}*/
+
 .rh-nav li a {
   color: white;
 }
@@ -60,10 +55,7 @@
 #pretzel-video {
   position: absolute;
   width: 100%;
-  /*right: 0;*/
-  /*left: 0;*/
   bottom: 0;
-  /*top: 0;*/
   min-width: 100%;
   bottom: 0;
 }
@@ -88,7 +80,6 @@
   max-width: 400px;
   position: relative;
   margin: 40px auto;
-  /*padding: 40px 0;*/
   text-align: center;
   cursor: not-allowed;
 }
@@ -122,7 +113,6 @@
   -webkit-border-radius: 0 3px 3px 0;
   -moz-border-radius: 0 3px 3px 0;
   border-radius: 0 3px 3px 0;
-  /*float: left;*/
 }
 
 .tt-hint {
@@ -145,7 +135,6 @@
   color: #333333;
   text-align: left;
   cursor: default;
-
 }
 
 .tt-suggestion {
@@ -158,8 +147,6 @@
   color: #fff;
   background-color: #4E8EF7;
   cursor: pointer;
-
-
 }
 
 .tt-suggestion p {
@@ -247,28 +234,18 @@
   text-decoration: none;
 }
 .columbia-card {
-  background-image: url(/images/columbia-university.jpg);
+  background-image: url(../images/columbia-university.jpg);
 }
 .nyu-card {
-  background-image: url("/images/new-york-university.jpg");
+  background-image: url("../images/new-york-university.jpg");
 }
 .stony-card {
-  background-image: url("/images/stony-brook.jpg");
+  background-image: url("../images/stony-brook.jpg");
 }
 .cuny-card {
-  background-image: url("/images/cuny.jpg");
-}
-.background-traveling-card {
-  /*position: absolute;*/
-  /*top: 0;*/
-  /*left: 0;*/
-  /*right: 0;*/
-  /*bottom: 0;*/
-  /*background-image: url(https://a1.muscache.com/airbnb/static/homepages/traveling-d79ea0446bf011f0c743d57a389329a8.jpg);*/
-  /*background-size: cover;*/
+  background-image: url("../images/cuny.jpg");
 }
 
-/* Custom page footer */
 .footer {
   background-color: #514747;
 }
@@ -278,10 +255,6 @@
   padding-bottom: 20px;
   color: #f7f7f7;
 }
-/*.footer .container {*/
-  /*border-top: 1px solid #e5e5e5;*/
-
-/*}*/
 
 .footer p {
   margin-bottom: 0px;
@@ -302,17 +275,11 @@
 .btn-blue.disabled {
   opacity: 1;
   background-color: #A6A6A6;
-  /*cursor: not-allowed;*/
-  /*pointer-events: auto;*/
 }
 .btn-blue.disabled:focus {
 
 }
-/*.btn-blue.disabled:hover, .btn-blue.disabled:focus {*/
-  /*color: #fff;*/
-  /*background-color: #69A1FD;*/
-  /*cursor: not-allowed;*/
-/*}*/
+
 
 .signup-or-separator {
   background:none;

@@ -61,7 +61,7 @@ body {
   top: 0;
   height: 500px;
   overflow: hidden;
-  min-width: 1045px;
+  min-width: 780px;
   width: auto;
   background: url('../images/video-bg.jpg') no-repeat;
   background-size: cover;
@@ -72,6 +72,11 @@ body {
   bottom: 0;
   min-width: 100%;
   bottom: 0;
+}
+@media (max-width: 800px) {
+  #pretzel-video {
+    display: none;
+  }
 }
 .search-area {
   /*height: 400px;*/

@@ -1,4 +1,6 @@
-
+body {
+  min-width: 780px;
+}
 .s1-wrapper {
   position: relative;
   height: 500px;
@@ -23,7 +25,13 @@
 .header h3 img{
   max-height: 40px;
 }
-
+.navbar-right {
+  float: right !important;
+  margin-right: -15px;
+}
+.navbar-nav > li {
+  float: left;
+}
 .rh-nav li a {
   color: white;
 }
@@ -201,6 +209,7 @@
   background-size: cover;
   background-position: 50% 25%;
   padding-bottom: 80px;
+  margin-bottom: 40px;;
   height: 400px;
   position: relative;
   display: block;

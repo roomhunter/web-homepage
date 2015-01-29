@@ -51,6 +51,8 @@ body {
 }
 .navbar-nav > li > .help-dropdown {
   border-radius: 3px;
+  right: 0;
+  left: auto;
 }
   /*.nav .help-contact*/
 .video {

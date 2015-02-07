@@ -29,20 +29,25 @@
               <a href="#" class="en hidden" id="switch-zh"><i class="fa fa-language"></i>&nbsp;中文</a>
               <a href="#" class="zh invisible" id="switch-en"><i class="fa fa-language"></i>&nbsp;English</a>
             </li>
-            <li>
-              <a class="oldLink" data-toggle="modal" href="#RegisterModal" data-backdrop="static">
+
+            <li class="none-cached-user-info">
+              <a href="#register-modal" id="register">
                 <span class="en hidden non-register">Register</span>
                 <span class="zh invisible non-register">注册</span>
               </a>
             </li>
-            <li>
-              <a class="oldLink" data-toggle="modal" href="#LoginModal">
+
+            <li class="none-cached-user-info">
+              <a href="#login-modal" id="login">
                 <span class="en hidden ">Login</span>
                 <span class="zh invisible">登录</span>
               </a>
             </li>
-            <li>
-              <a class="newLink">
+
+            <li class="has-cached-user-info">
+              <a href="app/#/user/" id="user-label">
+                <img src="" class="img-responsive img-circle">
+                <span id="user-name" class="user-name"></span>
               </a>
             </li>
             <li class="help-contact">
@@ -64,10 +69,8 @@
           <h3 class="logo"><img src="images/v3-white.png"></h3>
         </div>
       </div>
-
-
       <!-- modal for register-->
-      <div class="modal fade" id="RegisterModal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="register-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -91,7 +94,7 @@
                 </div>
               <div class="register-by-email">
               <div class="text-center" style="margin-bottom: 10px">
-                <i class="glyphicon glyphicon-envelope"></i>
+                <i class="fa fa-envelope-o"></i>
                 Register Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
@@ -127,12 +130,8 @@
                 </div>
               </div>
         </div>
-
-
-
-
       <!-- modal for login-->
-      <div class="modal fade" id="LoginModal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal fade" id="login-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -156,7 +155,7 @@
               </div>
               <div class="login-by-email">
                 <div class="text-center">
-                  <i class="glyphicon glyphicon-envelope"></i>
+                  <i class="fa fa-envelope-o"></i>
                   Login Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
@@ -195,7 +194,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- modal for personal details  --->
       <div class="modal fade" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -243,14 +241,6 @@
         </div>
       </div>
 
-
-
-
-
-
-
-
-
       <div class="caption">
         <div class="video">
           <video autoplay loop="loop" preload="auto" id="pretzel-video">
@@ -258,7 +248,6 @@
             <source src="https://a0.muscache.com/airbnb/static/SanFrancisco-P1-0.webm" type='video/webm'>
           </video>
         </div>
-
 
         <div class="search-area">
           <div class="head-line">
@@ -273,7 +262,6 @@
           </div>
           <div class="university-input" >
             <form id="query-form">
-              <!--<input id="search-str" type="text" class="form-control university-typeahead" placeholder="输入我要去的学校，找到周边住房">-->
               <input id="search-str" type="text" class="form-control university-typeahead" placeholder="">
               <button class="btn btn-blue" type="submit" id="search-btn">
                 <span class="en hidden">Go</span>
@@ -284,6 +272,7 @@
         </div>
       </div>
     </div>
+
     <div class="most-popular">
       <div class="container">
         <h2>
@@ -311,63 +300,11 @@
       </div>
     </div>
 
-      <!--<div class="story-block what-is">-->
-        <!--<div class="container">-->
-          <!--<div class="row">-->
-            <!--<div class="col-md-6">-->
-              <!--<h2>What is Room Hunter</h2>-->
-            <!--</div>-->
-            <!--<div class="col-md-6">-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-
-      <!--</div>-->
-      <!--<div class="story-block how-to-use">-->
-        <!--<div class="container">-->
-          <!--<div class="row">-->
-            <!--<div class="col-md-6">-->
-            <!--</div>-->
-            <!--<div class="col-md-6">-->
-              <!--<h2>How to use Room Hunter</h2>-->
-            <!--</div>-->
-
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="story-block why-we-do">-->
-        <!--<div class="container">-->
-          <!--<div class="row">-->
-
-            <!--<div class="col-md-6">-->
-              <!--<h2>Why we make Room Hunter</h2>-->
-            <!--</div>-->
-            <!--<div class="col-md-6">-->
-            <!--</div>-->
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-      <!--<div class="story-block who-we-are">-->
-        <!--<div class="container">-->
-          <!--<div class="row">-->
-            <!--<div class="col-md-6">-->
-            <!--</div>-->
-            <!--<div class="col-md-6">-->
-              <!--<h2>Who we are</h2>-->
-            <!--</div>-->
-
-          <!--</div>-->
-        <!--</div>-->
-      <!--</div>-->
-
       <div class="footer">
         <div class="container">
-
           <p>
             <i class="fa fa-heart"></i>
-            by
-            RoomHunter
-            LLC.
+            by RoomHunter LLC.
           </p>
         </div>
       </div>
@@ -395,7 +332,7 @@
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/bower_components/bootstrap/js/modal.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
@@ -405,6 +342,7 @@
     <script src="scripts/lang-switch.js"></script>
     <script src="scripts/help-contact.js"></script>
     <script src="scripts/school-input.js"></script>
+    <script src="scripts/user-auth.js"></script>
     <!-- endbuild -->
 </body>
 </html>

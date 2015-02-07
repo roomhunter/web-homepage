@@ -9,6 +9,14 @@
     "typeahead.js": "~0.10.5",
     "font-awesome": "^4.2.0"
   },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css",
+        "js/modal.js"
+      ]
+    }
+  },
   "devDependencies": {
   }
 }

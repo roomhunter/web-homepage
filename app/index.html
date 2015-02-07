@@ -30,15 +30,19 @@
               <a href="#" class="zh invisible" id="switch-en"><i class="fa fa-language"></i>&nbsp;English</a>
             </li>
             <li>
-              <a data-toggle="modal" href="#RegisterModal" data-backdrop="static">
+              <a class="oldLink" data-toggle="modal" href="#RegisterModal" data-backdrop="static">
                 <span class="en hidden non-register">Register</span>
                 <span class="zh invisible non-register">注册</span>
               </a>
             </li>
             <li>
-              <a href="#" data-toggle="modal" href="#LoginModal">
+              <a class="oldLink" data-toggle="modal" href="#LoginModal">
                 <span class="en hidden ">Login</span>
                 <span class="zh invisible">登录</span>
+              </a>
+            </li>
+            <li>
+              <a class="newLink">
               </a>
             </li>
             <li class="help-contact">
@@ -156,7 +160,7 @@
                   Login Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" action="/users/login" id="login-form" method="post">
+                  <form class="form-horizontal" id="login-form" method="post">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" id="emailaddress1" name="email" placeholder="Email">
@@ -179,7 +183,7 @@
                       <a href="#" class="forgot-password pull-right">Forget password？</a>
                     <div class="submit">
                       <p style="text-align: center">
-                      <input id="login-submit" type="submit" class="btn btn-primary submit-button" value="Login">
+                      <input id="login-submit" class="btn btn-primary submit-button" value="Login">
                       <!--<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>-->
                       </p>
                     </div>

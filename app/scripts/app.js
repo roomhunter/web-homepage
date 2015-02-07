@@ -62,7 +62,8 @@ $('.newLink').hide();
   })
 
 
-  $('#login-form').submit(function(e){
+  $('#login-submit').click(function(){
+    var host_url="http://121.199.3.126:3000/v1/users/login";
     var email = $('#emailaddress1').val();
     var pwd = $('#password1').val();
     if(email==""&&pwd=="") {
@@ -83,17 +84,20 @@ $('.newLink').hide();
       $('#msg2').show("slow").html("Password cannot be blank!");
       return;
     }
+    var postData_login = $('#login-form').serialize();
     $.ajax({
       cache:true,
-      type:post,
-      url:$('login-form').attr("action"),
-      data:postData,
-      dataType:json,
+      type:"POST",
+      url:host_url,
+      data:postData_login,
+      dataType:"json",
       success:function(data){
+        var obj = eval(data.data);
+        console.log(obj);
         $('.oldLink').hide();
-        location.reload();
-        $('.newLink').find('a').attr("href","/profile?username="+username).html(username);
+        $('.newLink').attr("href","").html(obj.firstName);
         $('.newLink').show();
+        $('#LoginModal').modal('hide');
       },
       error:function(){
         alert("aa");

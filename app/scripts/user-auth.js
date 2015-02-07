@@ -25,8 +25,8 @@ var userAuth = {
     $('.none-cached-user-info').css('display', 'none');
     $('.has-cached-user-info').css('display', 'block');
     userLabel.attr('href', 'app/#/user/' + id);
-    userLabel.children('span').text('Hi, ' + name);
-    userLabel.children('img').attr('src', avatar);
+    userLabel.children('span').text(name);
+    userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
@@ -128,11 +128,17 @@ var userAuth = {
         dataType:"json",
         success:function(data){
           var obj = eval(data.data);
+          alert(obj.userAvatar);
+          localStorage.setItem('userToken',obj.token);
+          localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');
           $('#user-label').attr("href",userHref + obj.userId);
           $('#user-name').text(obj.firstName);
+          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
           $('#login-modal').modal('hide');
         },

@@ -24,7 +24,7 @@ var userAuth = {
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
     $('.has-cached-user-info').css('display', 'block');
-    userLabel.attr('href', 'app/#/user/' + id);
+    userLabel.attr('href', 'app/#/user/edit/' + id);
     userLabel.children('span').text(name);
     userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },

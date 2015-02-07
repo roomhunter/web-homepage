@@ -128,7 +128,6 @@ var userAuth = {
         dataType:"json",
         success:function(data){
           var obj = eval(data.data);
-          alert(obj.userAvatar);
           localStorage.setItem('userToken',obj.token);
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);

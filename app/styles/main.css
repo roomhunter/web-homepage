@@ -19,7 +19,7 @@ body {
 .header h3 {
   margin-top: 0;
   margin-bottom: 0;
-  line-height: 40px;
+  line-height: 61px;
   padding-bottom: 19px;
 }
 .header h3 img{
@@ -356,3 +356,14 @@ body {
 .modal-dialog{
   width: 30%;
 }
+
+#user-avatar{
+  width:36px;
+  height:36px;
+}
+
+.navbar-nav > li > a{
+  line-height: 36px;
+}
+
+

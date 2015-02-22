@@ -52,25 +52,16 @@ var userAuth = {
     });
   },
   registerFormSubmit: function () {
-    $('#register-form').submit(function (e) {
+    $('#register-submit').click(function (e) {
+      var host_url="http://121.199.3.126:3000/v1/users/register";
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
-      if (email == "" && pwd == "") {
+      var firstname = $('#firstName').val();
+      var lastname = $('#lastName').val();
+      if (email == "" || pwd == ""||firstname==""||lastname=="") {
         $('.form-group').addClass("has-error");
         e.preventDefault();
         $('#msg').show("slow").html("The above fields cannot be blank!");
-        return;
-      }
-      else if (email == "") {
-        $('#emailaddress').addClass("has-error");
-        e.preventDefault();
-        $('#msg').show("slow").html("Email address cannot be blank!");
-        return;
-      }
-      else if (pwd == "") {
-        $('#password').addClass("has-error");
-        e.preventDefault();
-        $('#msg').show("slow").html("Password cannot be blank!");
         return;
       }
       var end = email.split(".");
@@ -88,11 +79,33 @@ var userAuth = {
       }
       ;
       <!-- use ajax to submit -->
-      var postData = $('#register-form').serialize();
-      $('.form-group').removeClass("has-error");
-      e.preventDefault();
-      $('#RegisterModal').modal('hide');
-      $('#InformationModal1').modal('show');
+      var postData_register = $('#register-form').serialize();
+      $.ajax({
+        cache:true,
+        type:"POST",
+        url:host_url,
+        data:postData_register,
+        dataType:"json",
+        success:function(data){
+          var obj = eval(data.data);
+          localStorage.setItem('userToken',obj.token);
+          localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('userAvatar',obj.userAvatar);
+          $('#register').hide();
+          $('#login').hide();
+          var userHref = $('#user-label').attr('href');
+          $('#user-label').attr("href",userHref + obj.userId);
+          $('#user-name').text(obj.firstName);
+          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
+          $('.has-cached-user-info').show();
+          $('#register-modal').modal('hide');
+        },
+        error:function(){
+          alert("aa");
+        }
+
+      })
     })
   },
 

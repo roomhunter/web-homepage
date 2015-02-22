@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
     <!-- endbower -->
     <!-- endbuild -->
-    <!-- build:css(.tmp) styles/main.css -->
+    <!-- build:css(.tmp) styles/mafin.css -->
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -106,7 +106,12 @@
                       </div>
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <input class="form-control" type="text" name="username" id="username" placeholder="Username">
+                        <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name">
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name">
                       </div>
                     </div>
                     <div class="form-group">
@@ -204,22 +209,12 @@
                       data-dismiss="modal" aria-hidden="true">
                 &times;
               </button>
-              <h4 class="modal-title text-center" id="registerModalLabel">
+              <h4 class="modal-title text-center" id="detailModalLabel">
                 Congratulations! You have successfully registered for roomhunter. Now please fill in some personal information.</h4>
             </div>
             <div class="modal-body">
               <div class="personal-information">
                   <form class="form-horizontal" action="#" id="personal-form-1" method="post">
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <input class="form-control" type="text" id="firstname" placeholder="First Name">
-                      </div>
-                    </div>
-                    <div class="form-group">
-                      <div class="col-sm-12">
-                        <input class="form-control" type="text" id="lastname" placeholder="Last Name">
-                      </div>
-                    </div>
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" id="university" placeholder="University">

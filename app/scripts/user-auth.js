@@ -160,16 +160,18 @@ var userAuth = {
     })
   },
   logOut: function () {
-    $('logout').click(function () {
-      var homepageAddress = "http://roomhunter.us";
-      if (location.hostname !== 'roomhunter.us') {
-        homepageAddress = 'http://121.199.3.126';
-      }
-      $('logout').attr("href",homepageAddress);
+    $('#logout').click(function () {
       localStorage.removeItem("userToken");
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
       localStorage.removeItem("userFirstName");
+      var homepageAddress = "http://roomhunter.us";
+      if (location.hostname !== 'roomhunter.us') {
+        homepageAddress = 'http://121.199.3.126';
+      }
+      $('.none-cached-user-info').css('display', 'block');
+      $('.has-cached-user-info').css('display', 'none');
+      window.location.href = homepageAddress;
     })
   },
 

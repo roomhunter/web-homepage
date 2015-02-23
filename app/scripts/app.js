@@ -16,6 +16,8 @@ $( document ).ready(function() {
   userAuth.loginButtonClicked();
   userAuth.registerButtonClicked();
   userAuth.loginFormSubmit();
+  userAuth.logOut();
   userAuth.registerFormSubmit();
   userAuth.profileFormSubmit();
+
 });

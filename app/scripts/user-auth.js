@@ -6,7 +6,7 @@ var userAuth = {
       var t = localStorage.getItem('userToken');
       var apiHost = 'https://api.roomhunter.us/';
       if (location.hostname !== 'roomhunter.us') {
-        apiHost = 'http://121.199.3.126:1111/';
+        apiHost = 'http://121.199.3.126:3000/';
       }
       var req = {
         userToken: t
@@ -76,8 +76,7 @@ var userAuth = {
         $('#msg').show("slow").html("You must register with an .edu email address!");
         e.preventDefault();
         return;
-      }
-      ;
+      };
       <!-- use ajax to submit -->
       var postData_register = $('#register-form').serialize();
       $.ajax({
@@ -104,7 +103,6 @@ var userAuth = {
         error:function(){
           alert("aa");
         }
-
       })
     })
   },
@@ -161,6 +159,20 @@ var userAuth = {
       })
     })
   },
+  logOut: function () {
+    $('logout').click(function () {
+      var homepageAddress = "http://roomhunter.us";
+      if (location.hostname !== 'roomhunter.us') {
+        homepageAddress = 'http://121.199.3.126';
+      }
+      $('logout').attr("href",homepageAddress);
+      localStorage.removeItem("userToken");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("userAvatar");
+      localStorage.removeItem("userFirstName");
+    })
+  },
+
   profileFormSubmit: function () {
     $('#personal-form-1').submit(function (e) {
       var first = $('#firstname').val();

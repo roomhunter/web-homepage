@@ -233,7 +233,7 @@ body {
   height:100%;
   top:0;
   left:0;
-  background:#000;
+  background: #000;
   opacity:0;
   -webkit-transition: opacity ease-in-out 200ms;
   -moz-transition: opacity ease-in-out 200ms;
@@ -256,16 +256,16 @@ body {
   text-decoration: none;
 }
 .columbia-card {
-  background-image: url(../images/columbia-university.jpg);
+  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/fcf6f264671c3b1ae5598a4de993e9cb.jpg");
 }
 .nyu-card {
-  background-image: url("../images/new-york-university.jpg");
+  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/c77b894d311321ee26773dcb5a912fa1.jpg");
 }
 .stony-card {
-  background-image: url("../images/stony-brook.jpg");
+  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/0a0869cc544a836bc80b1a4570474941.jpg");
 }
 .cuny-card {
-  background-image: url("../images/cuny.jpg");
+  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/e3d16ac1534c34d56024b5237f709e27.jpg");
 }
 
 .footer {

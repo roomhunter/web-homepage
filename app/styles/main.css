@@ -65,7 +65,7 @@ body {
   overflow: hidden;
   min-width: 780px;
   width: auto;
-  background: url('../images/video-bg.jpg') no-repeat;
+  background: url('http://roomhunter-images.b0.upaiyun.com/apartments/0476bbaafa7cbecb225b61ce003aa7a7.jpg') no-repeat;
   background-size: cover;
 }
 #pretzel-video {

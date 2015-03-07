@@ -6,7 +6,7 @@ var userAuth = {
       var t = localStorage.getItem('userToken');
       var apiHost = 'https://api.roomhunter.us/';
       if (location.hostname !== 'roomhunter.us') {
-        apiHost = 'http://121.199.3.126:1111/';
+        apiHost = 'http://121.199.3.126:3000/';
       }
       var req = {
         userToken: t
@@ -24,9 +24,9 @@ var userAuth = {
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
     $('.has-cached-user-info').css('display', 'block');
-    userLabel.attr('href', 'app/#/user/' + id);
-    userLabel.children('span').text('Hi, ' + name);
-    userLabel.children('img').attr('src', avatar);
+    userLabel.attr('href', 'app/#/user/edit/' + id);
+    userLabel.children('span').text(name);
+    userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
@@ -52,25 +52,16 @@ var userAuth = {
     });
   },
   registerFormSubmit: function () {
-    $('#register-form').submit(function (e) {
+    $('#register-submit').click(function (e) {
+      var host_url="http://121.199.3.126:3000/v1/users/register";
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
-      if (email == "" && pwd == "") {
+      var firstname = $('#firstName').val();
+      var lastname = $('#lastName').val();
+      if (email == "" || pwd == ""||firstname==""||lastname=="") {
         $('.form-group').addClass("has-error");
         e.preventDefault();
         $('#msg').show("slow").html("The above fields cannot be blank!");
-        return;
-      }
-      else if (email == "") {
-        $('#emailaddress').addClass("has-error");
-        e.preventDefault();
-        $('#msg').show("slow").html("Email address cannot be blank!");
-        return;
-      }
-      else if (pwd == "") {
-        $('#password').addClass("has-error");
-        e.preventDefault();
-        $('#msg').show("slow").html("Password cannot be blank!");
         return;
       }
       var end = email.split(".");
@@ -85,58 +76,105 @@ var userAuth = {
         $('#msg').show("slow").html("You must register with an .edu email address!");
         e.preventDefault();
         return;
-      }
-      ;
+      };
       <!-- use ajax to submit -->
-      var postData = $('#register-form').serialize();
-      $('.form-group').removeClass("has-error");
-      e.preventDefault();
-      $('#RegisterModal').modal('hide');
-      $('#InformationModal1').modal('show');
+      var postData_register = $('#register-form').serialize();
+      $.ajax({
+        cache:true,
+        type:"POST",
+        url:host_url,
+        data:postData_register,
+        dataType:"json",
+        success:function(data){
+          var obj = eval(data.data);
+          localStorage.setItem('userToken',obj.token);
+          localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('userAvatar',obj.userAvatar);
+          $('#register').hide();
+          $('#login').hide();
+          var userHref = $('#user-label').attr('href');
+          $('#user-label').attr("href",userHref + obj.userId);
+          $('#user-name').text(obj.firstName);
+          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
+          $('.has-cached-user-info').show();
+          $('#register-modal').modal('hide');
+        },
+        error:function(){
+          alert("aa");
+        }
+      })
     })
   },
 
   loginFormSubmit: function () {
-    $('#login-form').submit(function (e) {
+    $('#login-submit').click(function(){
+      var host_url="http://121.199.3.126:3000/v1/users/login";
       var email = $('#emailaddress1').val();
       var pwd = $('#password1').val();
-      if (email == "" && pwd == "") {
+      if(email==""&&pwd=="") {
         $('.form-group').addClass("has-error");
         e.preventDefault();
         $('#msg2').show("slow").html("The above fields cannot be blank!");
         return;
       }
-      else if (email == "") {
+      else if(email=="") {
         $('#emailaddress').addClass("has-error");
         e.preventDefault();
         $('#msg2').show("slow").html("Email address cannot be blank!");
         return;
       }
-      else if (pwd == "") {
+      else if(pwd=="") {
         $('#password').addClass("has-error");
         e.preventDefault();
         $('#msg2').show("slow").html("Password cannot be blank!");
         return;
       }
+      var postData_login = $('#login-form').serialize();
       $.ajax({
-        cache: true,
-        type: post,
-        url: $('login-form').attr("action"),
-        data: postData,
-        dataType: json,
-        success: function (data) {
-          $('.oldLink').hide();
-          location.reload();
-          $('.newLink').find('a').attr("href", "/profile?username=" + username).html(username);
-          $('.newLink').show();
+        cache:true,
+        type:"POST",
+        url:host_url,
+        data:postData_login,
+        dataType:"json",
+        success:function(data){
+          var obj = eval(data.data);
+          localStorage.setItem('userToken',obj.token);
+          localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('userAvatar',obj.userAvatar);
+          $('#register').hide();
+          $('#login').hide();
+          var userHref = $('#user-label').attr('href');
+          $('#user-label').attr("href",userHref + obj.userId);
+          $('#user-name').text(obj.firstName);
+          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
+          $('.has-cached-user-info').show();
+          $('#login-modal').modal('hide');
         },
-        error: function () {
+        error:function(){
           alert("aa");
         }
 
       })
     })
   },
+  logOut: function () {
+    $('#logout').click(function () {
+      localStorage.removeItem("userToken");
+      localStorage.removeItem("userId");
+      localStorage.removeItem("userAvatar");
+      localStorage.removeItem("userFirstName");
+      var homepageAddress = "http://roomhunter.us";
+      if (location.hostname !== 'roomhunter.us') {
+        homepageAddress = 'http://121.199.3.126';
+      }
+      $('.none-cached-user-info').css('display', 'block');
+      $('.has-cached-user-info').css('display', 'none');
+      window.location.href = homepageAddress;
+    })
+  },
+
   profileFormSubmit: function () {
     $('#personal-form-1').submit(function (e) {
       var first = $('#firstname').val();

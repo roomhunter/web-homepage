@@ -8,12 +8,10 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon-cyan.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <!-- build:css(.) styles/vendor.css -->
-    <!-- bower:css -->
     <link rel="stylesheet" href="/bower_components/bootstrap/dist/css/bootstrap.css" />
-    <link rel="stylesheet" href="/bower_components/font-awesome/css/font-awesome.css" />
-    <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/mafin.css -->
+    <link rel="stylesheet" href="styles/rh-icons.css">
     <link rel="stylesheet" href="styles/main.css">
     <!-- endbuild -->
   </head>
@@ -26,8 +24,8 @@
         <div class="header">
           <ul class="nav navbar-nav navbar-right rh-nav">
             <li class="lang-switch">
-              <a href="#" class="en hidden" id="switch-zh"><i class="fa fa-language"></i>&nbsp;中文</a>
-              <a href="#" class="zh invisible" id="switch-en"><i class="fa fa-language"></i>&nbsp;English</a>
+              <a href="#" class="en hidden" id="switch-zh"><i class="icon-language"></i>&nbsp;中文</a>
+              <a href="#" class="zh invisible" id="switch-en"><i class="icon-language"></i>&nbsp;English</a>
             </li>
 
             <li class="none-cached-user-info">
@@ -62,7 +60,7 @@
               <a href="#">
                 <span class="en hidden">Help</span>
                 <span class="zh invisible">帮助</span>
-                <i class="fa fa-caret-down"></i>
+                <i class="icon-down-dir"></i>
               </a>
               <ul class="dropdown-menu help-dropdown" role="menu">
                 <li><img src="images/qr-sample.jpg" class="img-responsive"></li>
@@ -102,7 +100,7 @@
                 </div>
               <div class="register-by-email">
               <div class="text-center" style="margin-bottom: 10px">
-                <i class="fa fa-envelope-o"></i>
+                <i class="icon-mail"></i>
                 Register Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
@@ -168,7 +166,7 @@
               </div>
               <div class="login-by-email">
                 <div class="text-center">
-                  <i class="fa fa-envelope-o"></i>
+                  <i class="icon-mail"></i>
                   Login Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
@@ -267,6 +265,7 @@
             <form id="query-form">
               <input id="search-str" type="text" class="form-control university-typeahead" placeholder="">
               <button class="btn btn-blue" type="submit" id="search-btn">
+                <i class="icon-search"></i>
                 <span class="en hidden">Go</span>
                 <span class="zh invisible">搜索</span>
               </button>
@@ -331,11 +330,9 @@
     <!-- endbuild -->
 
     <!-- build:js(.) scripts/vendor.js -->
-    <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
     <script src="/bower_components/bootstrap/js/modal.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
-    <!-- endbower -->
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->

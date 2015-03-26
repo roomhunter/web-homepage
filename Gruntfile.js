@@ -21,10 +21,6 @@ module.exports = function (grunt) {
 
     // Watches files for changes and runs tasks based on the changed files
     watch: {
-      bower: {
-        files: ['bower.json'],
-        tasks: ['wiredep']
-      },
       js: {
         files: ['<%= path.app %>/scripts/*.js'],
         tasks: ['newer:jshint:all'],
@@ -42,17 +38,8 @@ module.exports = function (grunt) {
       },
       gruntfile: {
         files: ['Gruntfile.js']
-      },
-      livereload: {
-        options: {
-          livereload: '<%= connect.options.livereload %>'
-        },
-        files: [
-          '<%= path.app %>/*.html',
-          '.tmp/styles/*.css',
-          '<%= path.app %>/images/*.{png,jpg,jpeg,gif,webp,svg}'
-        ]
       }
+
     },
 
     // The actual grunt server settings
@@ -152,31 +139,6 @@ module.exports = function (grunt) {
       }
     },
 
-    // Automatically inject Bower components into the app
-    wiredep: {
-      app: {
-        src: ['<%= path.app %>/index.html'],
-        exclude: [
-          'bower_components/es5-shim/es5-shim.js',
-          'bower_components/json3/lib/json3.js'
-        ],
-        ignorePath:  /\.\.\// ,
-        fileTypes: {
-          html: {
-            block: /(([ \t]*)<!--\s*bower:*(\S*)\s*-->)(\n|\r|.)*?(<!--\s*endbower\s*-->)/gi,
-            detect: {
-              js: /<script.*src=['"]([^'"]+)/gi,
-              css: /<link.*href=['"]([^'"]+)/gi
-            },
-            replace: {
-              js: '<script src="/{{filePath}}"></script>',
-              css: '<link rel="stylesheet" href="/{{filePath}}" />'
-            }
-          }
-        }
-      }
-    },
-
     // Renames files for browser caching purposes
     filerev: {
       dist: {
@@ -260,9 +222,9 @@ module.exports = function (grunt) {
           ]
         },{
           expand: true,
-          cwd: 'bower_components/font-awesome/fonts',
-          dest: '<%= path.dist %>/fonts',
-          src: '*.{ttf,woff,woff2}'
+          cwd: '<%= path.app %>/font',
+          dest: '<%= path.dist %>/font',
+          src: '*.{ttf,woff,svg,eot}'
         }
         ]
       },
@@ -305,7 +267,6 @@ module.exports = function (grunt) {
 
     grunt.task.run([
       'clean:server',
-      'wiredep',
       'concurrent:server',
       'autoprefixer',
       'connect:livereload',
@@ -328,7 +289,6 @@ module.exports = function (grunt) {
 
   grunt.registerTask('build', [
     'clean:dist',
-    'wiredep',
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',

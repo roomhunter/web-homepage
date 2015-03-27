@@ -276,29 +276,65 @@
     </div>
 
     <div class="most-popular">
-      <div class="container">
+      <div class="container carousel slide" id="carousel-example-generic" data-ride="carousel">
         <h2>
           <span class="en hidden">Most Popular Schools</span>
           <span class="zh invisible">热门学校</span>
         </h2>
-        <div class="row">
-          <div class="col-md-3">
-            <a href="app/#/li/columbia" class="popular-university-container columbia-card">
-            </a>
+        <ol class="carousel-indicators">
+          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+        </ol>
+        <div class="carousel-inner popular-school-part" role="listbox">
+          <div class="item active">
+            <div class="row">
+              <div class="col-md-3">
+                <a href="app/#/li/columbia" class="popular-university-container columbia-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/nyu" class="popular-university-container nyu-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/stony" class="popular-university-container stony-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/cuny" class="popular-university-container cuny-card">
+                </a>
+              </div>
+            </div>
           </div>
-          <div class="col-md-3">
-            <a href="app/#/li/nyu" class="popular-university-container nyu-card">
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a href="app/#/li/stony" class="popular-university-container stony-card">
-            </a>
-          </div>
-          <div class="col-md-3">
-            <a href="app/#/li/cuny" class="popular-university-container cuny-card">
-            </a>
+          <div class="item">
+            <div class="row">
+              <div class="col-md-3">
+                <a href="app/#/li/stony" class="popular-university-container stony-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/cuny" class="popular-university-container cuny-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/columbia" class="popular-university-container columbia-card">
+                </a>
+              </div>
+              <div class="col-md-3">
+                <a href="app/#/li/nyu" class="popular-university-container nyu-card">
+                </a>
+              </div>
+            </div>
           </div>
         </div>
+        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+          <i class="icon-angle-left" aria-hidden="true"></i>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+          <i class="icon-angle-right" aria-hidden="true"></i>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
     </div>
 
@@ -331,7 +367,9 @@
 
     <!-- build:js(.) scripts/vendor.js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>
+    <script src="/bower_components/bootstrap/js/transition.js"></script>
     <script src="/bower_components/bootstrap/js/modal.js"></script>
+    <script src="/bower_components/bootstrap/js/carousel.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbuild -->
 

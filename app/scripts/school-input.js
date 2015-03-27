@@ -97,7 +97,7 @@ schoolInput = {
     inputTypeahead
       .on('typeahead:selected', function () {
         var input = $('#search-str').val();
-        var url = universityMap[input];
+        var url = universityMap[input]['token'];
 
         if (!url) {
           return false;

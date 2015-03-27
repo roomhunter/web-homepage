@@ -11,11 +11,11 @@ var substringMatcher = function(strs) {
 
     // iterate through the pool of strings and for any string that
     // contains the substring `q`, add it to the `matches` array
-    $.each(strs, function(i, str) {
+    $.each(strs, function (i, str) {
       if (substrRegex.test(str)) {
         // the typeahead jQuery plugin expects suggestions to a
         // JavaScript object, refer to typeahead docs for more info
-        matches.push({ value: str });
+        matches.push({value: str});
       }
     });
 
@@ -52,7 +52,7 @@ schoolInput = {
     var input = $('#search-str').typeahead({
         hint: true,
         highlight: true,
-        minLength: 1
+        minLength: 0
       },
       {
         name: 'schools',
@@ -61,7 +61,7 @@ schoolInput = {
         templates: {
           empty: [
             '<div class="tt-empty-message text-muted">',
-            '<i class="fa fa-frown-o"></i>',
+            '<i class="icon-frown"></i>',
             emptyMessage,
             '</div>'
           ].join('\n')
@@ -109,6 +109,9 @@ schoolInput = {
           console.log('valid');
           btn.removeClass('disabled');
         }
+        if (input === '') {
+          langSwitch.initLang();
+        }
       });
 
     inputTypeahead.keyup(function () {
@@ -124,6 +127,15 @@ schoolInput = {
       else {
         console.log('valid');
         btn.removeClass('disabled');
+      }
+    });
+    inputTypeahead.click(function () {
+      var val = inputTypeahead.typeahead('val');
+      if (val === '') {
+        // trick, force to trigger updating query
+        inputTypeahead.typeahead('val', 'c');
+        inputTypeahead.typeahead('val', '');
+        inputTypeahead.attr('placeholder', '');
       }
     });
   }

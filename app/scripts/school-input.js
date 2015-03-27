@@ -15,7 +15,7 @@ var substringMatcher = function(strs) {
       if (substrRegex.test(str)) {
         // the typeahead jQuery plugin expects suggestions to a
         // JavaScript object, refer to typeahead docs for more info
-        matches.push({value: str});
+        matches.push({value: str, img: universityMap[str]['img']});
       }
     });
 
@@ -24,10 +24,22 @@ var substringMatcher = function(strs) {
 };
 
 var universityMap = {
-  'Columbia University': 'columbia',
-  'New York University': 'nyu',
-  'Stony Brook University': 'stony',
-  'City University of New York': 'cuny'
+  'Columbia University': {
+    token: 'columbia',
+    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/030972072134d06caef7867d83ca027c.jpeg'
+  },
+  'New York University': {
+    token: 'nyu',
+    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/35ad361d583743f33bbe0b276a84a142.jpg'
+  },
+  'Stony Brook University': {
+    token: 'stony',
+    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/44291985f3ea88a843917730ce6537e2.jpeg'
+  },
+  'City University of New York': {
+    token: 'cuny',
+    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/9ac2e000c2e38fe7b16af83874292d62.png'
+  }
 };
 
 var schoolInput;
@@ -36,7 +48,7 @@ schoolInput = {
   formSubmit: function () {
     $('#query-form').submit(function (e) {
       var input = $('#search-str').val();
-      var url = universityMap[input];
+      var url = universityMap[input]['token'];
 
       if (!url) {
         return false;
@@ -46,6 +58,9 @@ schoolInput = {
       window.location = 'app/#/li/' + url;
     });
 
+  },
+  compileTemplate: function (context) {
+    return '<img width="26" src="' + context.img + '"><span>' + context.value + '</span>';
   },
   init: function (emptyMessage) {
     $('#search-str').typeahead('destroy');
@@ -64,7 +79,8 @@ schoolInput = {
             '<i class="icon-frown"></i>',
             emptyMessage,
             '</div>'
-          ].join('\n')
+          ].join('\n'),
+          suggestion: schoolInput.compileTemplate
         }
       });
     return input;

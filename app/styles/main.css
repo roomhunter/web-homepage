@@ -162,6 +162,10 @@ body {
   padding: 5px 20px;
   font-size: 16px;
   line-height: 26px;
+  /*height: 30px;*/
+}
+.tt-suggestion span {
+  margin-left: 13px;
 }
 
 .tt-suggestion.tt-cursor {

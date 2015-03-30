@@ -52,7 +52,7 @@ var userAuth = {
     });
   },
   registerFormSubmit: function () {
-    $('#register-submit').click(function (e) {
+    $('#register-submit').click(function () {
       var host_url="http://121.199.3.126:3000/v1/users/register";
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
@@ -74,7 +74,6 @@ var userAuth = {
       if (end[1] != "edu") {
         $('#emailaddress').addClass("has-error");
         $('#msg').show("slow").html("You must register with an .edu email address!");
-        e.preventDefault();
         return;
       };
       <!-- use ajax to submit -->
@@ -87,10 +86,11 @@ var userAuth = {
         dataType:"json",
         success:function(data){
           var obj = eval(data.data);
-          localStorage.setItem('userToken',obj.token);
-          localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userToken',obj.userToken);
+          //localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
+          alert(obj.userToken);
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');
@@ -109,7 +109,7 @@ var userAuth = {
 
   loginFormSubmit: function () {
     $('#login-submit').click(function(){
-      var host_url="http://121.199.3.126:3000/v1/users/login";
+      var host_url="http://121.199.3.126:3000/users/login";
       var email = $('#emailaddress1').val();
       var pwd = $('#password1').val();
       if(email==""&&pwd=="") {
@@ -131,6 +131,7 @@ var userAuth = {
         return;
       }
       var postData_login = $('#login-form').serialize();
+
       $.ajax({
         cache:true,
         type:"POST",
@@ -138,6 +139,7 @@ var userAuth = {
         data:postData_login,
         dataType:"json",
         success:function(data){
+          console.log($('#login-form').serialize());
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.token);
           localStorage.setItem('userId',obj.userId);
@@ -200,7 +202,7 @@ var userAuth = {
       }
       $.ajax({
         cache: true,
-        type: post,
+        type: 'POST',
         url: $('information-form-1').attr("action"),
         data: postData,
         dataType: json,

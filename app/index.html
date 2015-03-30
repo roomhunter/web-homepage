@@ -39,7 +39,7 @@
 
             <li class="none-cached-user-info">
               <a href="#login-modal" id="login">
-                <span class="en hidden ">Login</span>
+                <span class="en hidden">Login</span>
                 <span class="zh invisible">登录</span>
               </a>
             </li>
@@ -92,7 +92,7 @@
             <div class="modal-body">
               <div class="register-by-wechat text-center">
                Register Using Wechat
-                <div class="img-circle" >
+                <div class="img-circle">
                 <img src="images/fake-2D-code.png" class="twoD-code-image">
                   </div>
                 </div>
@@ -106,12 +106,12 @@
                 Register Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" action="/users/register" id="register-form" method="post" name="register-form">
+                  <form class="form-horizontal" id="register-form" method="post" name="register-form">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" name="email" id="emailaddress" placeholder="Email">
                       </div>
-                      </div>
+                    </div>
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name">
@@ -124,7 +124,7 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <input class="form-control" type="text" name="password" id="password" placeholder="Password">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Password">
                       </div>
                       <div class="error-message text-center">
                         <span id="msg"></span>
@@ -209,7 +209,7 @@
       </div>
 
       <!-- modal for personal details  --->
-      <div class="modal fade" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">

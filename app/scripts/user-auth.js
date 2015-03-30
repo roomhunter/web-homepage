@@ -87,7 +87,7 @@ var userAuth = {
         success:function(data){
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
-          //localStorage.setItem('userId',obj.userId);
+          localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
           alert(obj.userToken);
@@ -101,7 +101,7 @@ var userAuth = {
           $('#register-modal').modal('hide');
         },
         error:function(){
-          alert("aa");
+          //alert("aa");
         }
       })
     })
@@ -141,7 +141,7 @@ var userAuth = {
         success:function(data){
           console.log($('#login-form').serialize());
           var obj = eval(data.data);
-          localStorage.setItem('userToken',obj.token);
+          localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);

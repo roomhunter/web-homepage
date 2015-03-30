@@ -6,8 +6,7 @@
     "es5-shim": "~4.0.5",
     "bootstrap": "~3.3.0",
     "jquery": ">=1.11",
-    "typeahead.js": "~0.10.5",
-    "font-awesome": "^4.2.0"
+    "typeahead.js": "~0.10.5"
   },
   "overrides": {
     "bootstrap": {

@@ -51,6 +51,13 @@ var userAuth = {
       $('#login-modal').modal('show');
     });
   },
+  forgetPwdButtonClicked: function () {
+    $('#forgetPwd').click(function () {
+      $('#login-modal').modal('hide');
+      $('#forgetPwd-modal').modal('show');
+    })
+
+  },
   registerFormSubmit: function () {
     $('#register-submit').click(function () {
       var host_url="http://121.199.3.126:3000/v1/users/register";
@@ -174,6 +181,27 @@ var userAuth = {
       $('.none-cached-user-info').css('display', 'block');
       $('.has-cached-user-info').css('display', 'none');
       window.location.href = homepageAddress;
+    })
+  },
+
+  forgetPwdFormSubmit: function () {
+    $('#forgetPwd-submit').click(function () {
+      var host_url = "http://121.199.3.126:3000/v1/users/login";
+      $.ajax({
+        cache:true,
+        type:"POST",
+        url:host_url,
+        data:$('#forgetPwd-form').serialize(),
+        dataType:"json",
+        success:function(data){
+          var obj = eval(data.data);
+          console.log(data);
+        },
+        error:function(){
+          console.log("error");
+        }
+
+      })
     })
   },
 

@@ -107,7 +107,7 @@
                 Register Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" id="register-form" method="post" name="register-form">
+                  <form class="form-horizontal" id="register-form" name="register-form">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" name="email" id="emailaddress" placeholder="Email">
@@ -173,7 +173,7 @@
                   Login Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" id="login-form" method="post">
+                  <form class="form-horizontal" id="login-form">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" id="emailaddress1" name="email" placeholder="Email">
@@ -193,11 +193,10 @@
                         <input type="checkbox" name="remember_me" id="remember_me2" value="true" class="remember_me"/>
                         Auto-login
                       </label>
-                      <a href="#" class="forgot-password pull-right">Forget password？</a>
+                      <a href="#" class="forgot-password pull-right" id="forgetPwd">Forget password？</a>
                     <div class="submit">
                       <p style="text-align: center">
                       <input id="login-submit" class="btn btn-primary submit-button" value="Login">
-                      <!--<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>-->
                       </p>
                     </div>
                   </form>
@@ -240,10 +239,46 @@
                   </form>
                 </div>
               </div>
-
           </div>
         </div>
       </div>
+
+      <!-- modal for forget password -->
+      <div class="modal fade" id="forgetPwd-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center" id="forgetPwdModalLabel">
+                Reset Password</h4>
+            </div>
+            <div class="modal-body">
+              <div class="reset-password">
+                <div style="margin-bottom: 10px">
+                  Enter the email address associated with your account, and we'll email you a link to reset your password.
+                </div>
+                <div class="loginOrRegister-content">
+                  <form class="form-horizontal" id="forgetPwd-form">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="submit">
+                      <p style="text-align:center">
+                        <input  class="btn btn-success submit-button text-center" value="Sent Email" id="forgetPwd-submit">
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div class="caption">
         <div class="video">

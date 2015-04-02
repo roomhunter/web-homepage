@@ -18,9 +18,13 @@ $( document ).ready(function() {
 
   userAuth.loginButtonClicked();
   userAuth.registerButtonClicked();
+  userAuth.forgetPwdButtonClicked();
   userAuth.loginFormSubmit();
   userAuth.logOut();
   userAuth.registerFormSubmit();
-  userAuth.profileFormSubmit();
+  userAuth.forgetPwdFormSubmit();
+  //userAuth.profileFormSubmit();
+
+
 
 });

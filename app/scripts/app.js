@@ -2,6 +2,9 @@
 
 
 $( document ).ready(function() {
+
+  weixinLogin.initialization();
+
   userAuth.initAuthViewWithCachedInfo();
   userAuth.userLabelClicked();
 

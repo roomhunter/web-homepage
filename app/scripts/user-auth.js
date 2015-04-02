@@ -109,7 +109,7 @@ var userAuth = {
 
   loginFormSubmit: function () {
     $('#login-submit').click(function(){
-      var host_url="http://121.199.3.126:3000/users/login";
+      var host_url="http://121.199.3.126:3000/v1/users/login";
       var email = $('#emailaddress1').val();
       var pwd = $('#password1').val();
       if(email==""&&pwd=="") {
@@ -155,7 +155,7 @@ var userAuth = {
           $('#login-modal').modal('hide');
         },
         error:function(){
-          alert("aa");
+          //alert("aa");
         }
 
       })

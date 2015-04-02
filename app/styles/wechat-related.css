@@ -1,0 +1,22 @@
+
+.impowerBox .qrcode {
+  width: 200px;
+  height: 200px;
+}
+
+.impowerBox .title {
+  display: none;
+  height: 0;
+}
+
+.impowerBox .info {
+  display: none;
+}
+
+.status_icon {
+  display: none;
+}
+.impowerBox .status {
+  display: none;
+  height: 0;
+}

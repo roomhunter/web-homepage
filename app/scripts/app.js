@@ -2,6 +2,9 @@
 
 
 $( document ).ready(function() {
+
+  weixinLogin.initialization();
+
   userAuth.initAuthViewWithCachedInfo();
   userAuth.userLabelClicked();
 
@@ -15,9 +18,13 @@ $( document ).ready(function() {
 
   userAuth.loginButtonClicked();
   userAuth.registerButtonClicked();
+  userAuth.forgetPwdButtonClicked();
   userAuth.loginFormSubmit();
   userAuth.logOut();
   userAuth.registerFormSubmit();
-  userAuth.profileFormSubmit();
+  userAuth.forgetPwdFormSubmit();
+  //userAuth.profileFormSubmit();
+
+
 
 });

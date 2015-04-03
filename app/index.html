@@ -93,8 +93,8 @@
             <div class="modal-body">
               <div class="register-by-wechat text-center">
                Register Using Wechat
-                <div class="img-circle" >
-                <img src="images/fake-2D-code.png" class="twoD-code-image">
+                <div class="img-circle" id="wechat-register-2D-code">
+                <!--<img src="images/fake-2D-code.png" class="twoD-code-image">-->
                   </div>
                 </div>
               <div class="signup-or-separator">
@@ -107,12 +107,12 @@
                 Register Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" action="/users/register" id="register-form" method="post" name="register-form">
+                  <form class="form-horizontal" id="register-form" name="register-form">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" name="email" id="emailaddress" placeholder="Email">
                       </div>
-                      </div>
+                    </div>
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name">
@@ -125,7 +125,7 @@
                     </div>
                     <div class="form-group">
                       <div class="col-sm-12">
-                        <input class="form-control" type="text" name="password" id="password" placeholder="Password">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="Password">
                       </div>
                       <div class="error-message text-center">
                         <span id="msg"></span>
@@ -159,8 +159,8 @@
             <div class="modal-body">
               <div class="login-by-wechat text-center">
                 Login Using Wechat
-                <div class="img-circle">
-                  <img src="images/fake-2D-code.png" class="twoD-code-image">
+                <div class="img-circle" id="wechat-login-2D-code">
+                  <!--<img src="images/fake-2D-code.png" class="twoD-code-image">-->
                 </div>
               </div>
               <div class="signup-or-separator">
@@ -173,7 +173,7 @@
                   Login Using .edu Email
                 </div>
                 <div class="loginOrRegister-content">
-                  <form class="form-horizontal" id="login-form" method="post">
+                  <form class="form-horizontal" id="login-form">
                     <div class="form-group">
                       <div class="col-sm-12">
                         <input class="form-control" type="text" id="emailaddress1" name="email" placeholder="Email">
@@ -193,11 +193,10 @@
                         <input type="checkbox" name="remember_me" id="remember_me2" value="true" class="remember_me"/>
                         Auto-login
                       </label>
-                      <a href="#" class="forgot-password pull-right">Forget password？</a>
+                      <a href="#" class="forgot-password pull-right" id="forgetPwd">Forget password？</a>
                     <div class="submit">
                       <p style="text-align: center">
                       <input id="login-submit" class="btn btn-primary submit-button" value="Login">
-                      <!--<button class="btn btn-default" type="button" data-dismiss="modal">Cancel</button>-->
                       </p>
                     </div>
                   </form>
@@ -210,7 +209,7 @@
       </div>
 
       <!-- modal for personal details  --->
-      <div class="modal fade" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal" id="InformationModal1" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
           <div class="modal-content">
             <div class="modal-header">
@@ -240,10 +239,46 @@
                   </form>
                 </div>
               </div>
-
           </div>
         </div>
       </div>
+
+      <!-- modal for forget password -->
+      <div class="modal fade" id="forgetPwd-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" aria-hidden="true" data-dismiss="modal">
+                &times;
+              </button>
+              <h4 class="modal-title text-center" id="forgetPwdModalLabel">
+                Reset Password</h4>
+            </div>
+            <div class="modal-body">
+              <div class="reset-password">
+                <div style="margin-bottom: 10px">
+                  Enter the email address associated with your account, and we'll email you a link to reset your password.
+                </div>
+                <div class="loginOrRegister-content">
+                  <form class="form-horizontal" id="forgetPwd-form">
+                    <div class="form-group">
+                      <div class="col-sm-12">
+                        <input class="form-control" type="text" name="email" placeholder="Email">
+                      </div>
+                    </div>
+                    <div class="submit">
+                      <p style="text-align:center">
+                        <input  class="btn btn-success submit-button text-center" value="Sent Email" id="forgetPwd-submit">
+                      </p>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <div class="caption">
         <div class="video">
@@ -374,6 +409,7 @@
     <script src="/bower_components/bootstrap/js/modal.js"></script>
     <script src="/bower_components/bootstrap/js/carousel.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
+    <script src="http://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
     <!-- endbuild -->
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
@@ -382,6 +418,7 @@
     <script src="scripts/help-contact.js"></script>
     <script src="scripts/school-input.js"></script>
     <script src="scripts/user-auth.js"></script>
+    <script src="scripts/weixinLogin.js"></script>
     <!-- endbuild -->
 </body>
 </html>

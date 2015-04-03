@@ -51,8 +51,15 @@ var userAuth = {
       $('#login-modal').modal('show');
     });
   },
+  forgetPwdButtonClicked: function () {
+    $('#forgetPwd').click(function () {
+      $('#login-modal').modal('hide');
+      $('#forgetPwd-modal').modal('show');
+    })
+
+  },
   registerFormSubmit: function () {
-    $('#register-submit').click(function (e) {
+    $('#register-submit').click(function () {
       var host_url="http://121.199.3.126:3000/v1/users/register";
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
@@ -74,7 +81,6 @@ var userAuth = {
       if (end[1] != "edu") {
         $('#emailaddress').addClass("has-error");
         $('#msg').show("slow").html("You must register with an .edu email address!");
-        e.preventDefault();
         return;
       };
       <!-- use ajax to submit -->
@@ -91,6 +97,7 @@ var userAuth = {
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
+          alert(obj.userToken);
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');
@@ -131,6 +138,7 @@ var userAuth = {
         return;
       }
       var postData_login = $('#login-form').serialize();
+
       $.ajax({
         cache:true,
         type:"POST",
@@ -138,6 +146,7 @@ var userAuth = {
         data:postData_login,
         dataType:"json",
         success:function(data){
+          console.log($('#login-form').serialize());
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
@@ -153,7 +162,7 @@ var userAuth = {
           $('#login-modal').modal('hide');
         },
         error:function(){
-          alert("aa");
+          //alert("aa");
         }
 
       })
@@ -172,6 +181,27 @@ var userAuth = {
       $('.none-cached-user-info').css('display', 'block');
       $('.has-cached-user-info').css('display', 'none');
       window.location.href = homepageAddress;
+    })
+  },
+
+  forgetPwdFormSubmit: function () {
+    $('#forgetPwd-submit').click(function () {
+      var host_url = "http://121.199.3.126:3000/v1/users/login";
+      $.ajax({
+        cache:true,
+        type:"POST",
+        url:host_url,
+        data:$('#forgetPwd-form').serialize(),
+        dataType:"json",
+        success:function(data){
+          var obj = eval(data.data);
+          console.log(data);
+        },
+        error:function(){
+          console.log("error");
+        }
+
+      })
     })
   },
 
@@ -200,7 +230,7 @@ var userAuth = {
       }
       $.ajax({
         cache: true,
-        type: post,
+        type: 'POST',
         url: $('information-form-1').attr("action"),
         data: postData,
         dataType: json,

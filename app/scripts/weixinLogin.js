@@ -22,8 +22,8 @@ var weixinLogin = {
         scope: "snsapi_login",
         redirect_uri: encodeURIComponent("http://roomhunter.us"),
         state: "",
-        style: "black",
-        href: "http://localhost:9000/styles/wechat-related.css"
+        style: "black"
+        //href: "http://localhost:9000/styles/wechat-related.css"
       });
 
       $("iframe").each(function () {

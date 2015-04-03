@@ -186,7 +186,7 @@ var userAuth = {
 
   forgetPwdFormSubmit: function () {
     $('#forgetPwd-submit').click(function () {
-      var host_url = "http://121.199.3.126:3000/v1/users/login";
+      var host_url = "http://121.199.3.126:3000/v1/users/forget-pwd";
       $.ajax({
         cache:true,
         type:"POST",
@@ -194,8 +194,10 @@ var userAuth = {
         data:$('#forgetPwd-form').serialize(),
         dataType:"json",
         success:function(data){
-          var obj = eval(data.data);
-          console.log(data);
+          $('#forgetPwd-modal').modal('hide');
+          $('#alertMessage').show();
+          setTimeout("$('#alertMessage').hide()",5000);
+
         },
         error:function(){
           console.log("error");

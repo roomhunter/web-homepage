@@ -193,7 +193,7 @@
                         <input type="checkbox" name="remember_me" id="remember_me2" value="true" class="remember_me"/>
                         Auto-login
                       </label>
-                      <a href="#" class="forgot-password pull-right" id="forgetPwd">Forget password？</a>
+                      <a href="#" class="forgot-password pull-right" id="forgetPwd" style="text-decoration: none">Forget password？</a>
                     <div class="submit">
                       <p style="text-align: center">
                       <input id="login-submit" class="btn btn-primary submit-button" value="Login">
@@ -384,6 +384,11 @@
       </div>
     </div>
 
+    <!-- alert message for users to check email box -->
+    <div class="alert alert-danger" id="alertMessage">
+      A link to reset your password has been sent to lixiy1234@gmail.com.
+    </div>
+
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>
@@ -409,8 +414,8 @@
     <script src="/bower_components/bootstrap/js/modal.js"></script>
     <script src="/bower_components/bootstrap/js/carousel.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
-    <script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
     <!-- endbuild -->
+    <script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>

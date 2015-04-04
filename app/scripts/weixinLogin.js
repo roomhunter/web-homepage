@@ -56,7 +56,7 @@ var weixinLogin = {
           cache:true,
           type:"GET",
           url:accessTokenUrl,
-          data:requestParam.serialize(),
+          data:requestParam,
           dataType:"json",
           success:function(data){
             console.log(data);

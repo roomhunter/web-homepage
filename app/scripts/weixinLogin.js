@@ -57,14 +57,16 @@ var weixinLogin = {
           type:"GET",
           url:accessTokenUrl,
           data:requestParam,
-          dataType:"json",
+          dataType:"jsonp",
           success:function(data){
-            console.log(data);
+            console.log(data.length);
+            console.log(data.access_token);
+
             accessToken = data.access_token;
             userOpenId = data.openid;
           },
-          error:function(){
-            alert("error");
+          error:function(data){
+            console.log(data);
           }
         });
       };

@@ -22,15 +22,15 @@ var weixinLogin = {
       //href: twoDCodeBoxStyleFile
     });
 
-    var wechat_register = new WxLogin({
-      id: "wechat-register-2D-code",
-      appid: appId,
-      scope: "snsapi_login",
-      redirect_uri: encodeURIComponent(redirect_url),
-      state: "",
-      style: "black"
-      //href: twoDCodeBoxStyleFile
-    });
+    //var wechat_register = new WxLogin({
+    //  id: "wechat-register-2D-code",
+    //  appid: appId,
+    //  scope: "snsapi_login",
+    //  redirect_uri: encodeURIComponent(redirect_url),
+    //  state: "",
+    //  style: "black"
+    //  href: twoDCodeBoxStyleFile
+    //});
 
 
     $("iframe").each(function () {
@@ -43,6 +43,7 @@ var weixinLogin = {
       if (r != null) return decodeURIComponent(r[2]);
       return null;
     }
+
 
     var apiCode = getUrlParam("code");
     if (apiCode != null) {

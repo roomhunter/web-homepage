@@ -67,7 +67,6 @@ var weixinLogin = {
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
-
         },
         error: function () {
           console.log("error");

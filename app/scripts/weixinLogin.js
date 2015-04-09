@@ -69,7 +69,6 @@ var weixinLogin = {
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
-          window.location.href = "http://121.199.3.126";
         },
         error: function () {
           console.log("error");

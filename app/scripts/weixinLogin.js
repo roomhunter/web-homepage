@@ -9,7 +9,7 @@ var weixinLogin = {
     var appId = "wxc685011a4fb095bd";
     var appSecret = "5ae24c2aa5bca08b8c8732df9ccf9a3f";
     var redirect_url = "http://121.199.3.126";
-    var requestUserInfoUrl = "http://121.199.3.126:3000/v1/users/wechat/login"
+    var requestUserInfoUrl = "http://121.199.3.126:3000/users/wechat/login"
     var twoDCodeBoxStyleFile = "http://localhost:9000/styles/wechat-related.css";
 
     var wechat_login = new WxLogin({
@@ -50,7 +50,7 @@ var weixinLogin = {
 
       //request for weixin user information
       var requestUserInfoData = {
-        apiCode : apiCode
+        code : apiCode
       };
       $.ajax({
         cache: true,
@@ -63,11 +63,13 @@ var weixinLogin = {
           localStorage.setItem("userId", obj.userId);
           localStorage.setItem("userAvatar", obj.userAvatar);
           localStorage.setItem("userToken", obj.userToken);
+          localStorage.setItem("firstName", obj.firstName)
           var userHref = $('#user-label').attr('href');
           $('#user-label').attr("href",userHref + obj.userId);
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
+          location.reload();
         },
         error: function () {
           console.log("error");

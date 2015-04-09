@@ -54,7 +54,7 @@ var weixinLogin = {
       };
       $.ajax({
         cache: true,
-        type: "POST",
+        type: "GET",
         url: requestUserInfoUrl,
         data: requestUserInfoData,
         dataType: "json",

@@ -1,13 +1,17 @@
 'use strict';
 
 var userAuth = {
+  apiHost: function () {
+    if (location.hostname === 'roomhunter.us') {
+      return 'https://api.roomhunter.us/v1';
+    }
+    else {
+      return 'https://121.199.3.126:3001/v1';
+    }
+  },
   userLabelClicked: function () {
     $('#user-label').click(function () {
       var t = localStorage.getItem('userToken');
-      var apiHost = 'https://api.roomhunter.us/';
-      if (location.hostname !== 'roomhunter.us') {
-        apiHost = 'http://121.199.3.126:3000/';
-      }
       var req = {
         userToken: t
       }
@@ -60,7 +64,7 @@ var userAuth = {
   },
   registerFormSubmit: function () {
     $('#register-submit').click(function () {
-      var host_url="http://121.199.3.126:3000/v1/users/register";
+      var host_url = userAuth.apiHost() + '/users/register';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
       var firstname = $('#firstName').val();
@@ -115,7 +119,7 @@ var userAuth = {
 
   loginFormSubmit: function () {
     $('#login-submit').click(function(){
-      var host_url="http://121.199.3.126:3000/v1/users/login";
+      var host_url = userAuth.apiHost() + '/users/login';
       var email = $('#emailaddress1').val();
       var pwd = $('#password1').val();
       if(email==""&&pwd=="") {
@@ -173,19 +177,15 @@ var userAuth = {
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
       localStorage.removeItem("userFirstName");
-      var homepageAddress = "http://roomhunter.us";
-      if (location.hostname !== 'roomhunter.us') {
-        homepageAddress = 'http://121.199.3.126';
-      }
       $('.none-cached-user-info').css('display', 'block');
       $('.has-cached-user-info').css('display', 'none');
-      window.location.href = homepageAddress;
+      window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
     })
   },
 
   forgetPwdFormSubmit: function () {
     $('#forgetPwd-submit').click(function () {
-      var host_url = "http://121.199.3.126:3000/v1/users/forget-pwd";
+      var host_url = userAuth.apiHost() + "/users/forget-pwd";
       $.ajax({
         cache:true,
         type:"POST",

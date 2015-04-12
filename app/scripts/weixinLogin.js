@@ -1,7 +1,7 @@
 /**
  * Created by xinyue on 4/2/15.
  */
-'user strict'
+'use strict';
 
 var weixinLogin = {
 

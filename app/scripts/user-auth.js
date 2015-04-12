@@ -97,7 +97,6 @@ var userAuth = {
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('userFirstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
-          alert(obj.userToken);
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');

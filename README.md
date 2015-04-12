@@ -8,6 +8,7 @@ Tasks
 
 - [ ] explore compress vendor.js and vendor.css
   -	[ ] customize bootstrap.css
+- [ ] update lizong's API url to our https version
 - [x] use jingyi's fonts
   - [x] 360's google fonts are blocked, need to workaround!
   - [x] according to http://www.gdgny.org/project/gfonts , google font is supported in mainland, needs more testings

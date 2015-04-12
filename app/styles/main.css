@@ -1,8 +1,7 @@
 body {
   min-width: 780px;
   font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei',
-  'WenQuanYi Micro Hei', 'Heiti SC', sans-serif;
-}
+  'WenQuanYi Micro Hei', 'Heiti SC', sans-serif;}
 .s1-wrapper {
   position: relative;
   height: 500px;
@@ -67,7 +66,7 @@ body {
   overflow: hidden;
   min-width: 780px;
   width: auto;
-  background: url('http://roomhunter-images.b0.upaiyun.com/apartments/0476bbaafa7cbecb225b61ce003aa7a7.jpg') no-repeat;
+  background: url('https://roomhunter-images.b0.upaiyun.com/apartments/0476bbaafa7cbecb225b61ce003aa7a7.jpg') no-repeat;
   background-size: cover;
 }
 #pretzel-video {
@@ -295,16 +294,16 @@ body {
   text-decoration: none;
 }
 .columbia-card {
-  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/fcf6f264671c3b1ae5598a4de993e9cb.jpg");
+  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/fcf6f264671c3b1ae5598a4de993e9cb.jpg");
 }
 .nyu-card {
-  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/c77b894d311321ee26773dcb5a912fa1.jpg");
+  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/c77b894d311321ee26773dcb5a912fa1.jpg");
 }
 .stony-card {
-  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/0a0869cc544a836bc80b1a4570474941.jpg");
+  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/0a0869cc544a836bc80b1a4570474941.jpg");
 }
 .cuny-card {
-  background-image: url("http://roomhunter-images.b0.upaiyun.com/apartments/e3d16ac1534c34d56024b5237f709e27.jpg");
+  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/e3d16ac1534c34d56024b5237f709e27.jpg");
 }
 
 .footer {

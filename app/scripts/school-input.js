@@ -26,19 +26,19 @@ var substringMatcher = function(strs) {
 var universityMap = {
   'Columbia University': {
     token: 'columbia',
-    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/030972072134d06caef7867d83ca027c.jpeg'
+    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/030972072134d06caef7867d83ca027c.jpeg'
   },
   'New York University': {
     token: 'nyu',
-    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/35ad361d583743f33bbe0b276a84a142.jpg'
+    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/35ad361d583743f33bbe0b276a84a142.jpg'
   },
   'Stony Brook University': {
     token: 'stony',
-    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/44291985f3ea88a843917730ce6537e2.jpeg'
+    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/44291985f3ea88a843917730ce6537e2.jpeg'
   },
   'City University of New York': {
     token: 'cuny',
-    img: 'http://roomhunter-images.b0.upaiyun.com/apartments/9ac2e000c2e38fe7b16af83874292d62.png'
+    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/9ac2e000c2e38fe7b16af83874292d62.png'
   }
 };
 

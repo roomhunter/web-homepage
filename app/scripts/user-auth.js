@@ -179,7 +179,7 @@ var userAuth = {
       localStorage.removeItem("userFirstName");
       $('.none-cached-user-info').css('display', 'block');
       $('.has-cached-user-info').css('display', 'none');
-      window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
+      //window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
     })
   },
 

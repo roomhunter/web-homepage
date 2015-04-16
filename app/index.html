@@ -313,32 +313,46 @@
     </div>
 
     <div class="most-popular">
-      <div class="container carousel slide" id="carousel-example-generic" data-ride="carousel">
+      <div class="container carousel slide" id="schools-carousel" data-ride="carousel">
+      <!--<div class="container carousel slide" id="schools-carousel" >-->
+
         <h2>
           <span class="en hidden">Most Popular Schools</span>
           <span class="zh invisible">热门学校</span>
         </h2>
         <ol class="carousel-indicators">
-          <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-          <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+          <li data-target="#schools-carousel" data-slide-to="0" class="active"></li>
+          <li data-target="#schools-carousel" data-slide-to="1"></li>
         </ol>
         <div class="carousel-inner popular-school-part" role="listbox">
           <div class="item active">
             <div class="row">
               <div class="col-md-3">
                 <a href="app/#/li/columbia" class="popular-university-container columbia-card">
+                  <div class="university-name">
+                    <h2> Columbia University</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
                 <a href="app/#/li/nyu" class="popular-university-container nyu-card">
+                  <div class="university-name">
+                    <h2> New York University</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
-                <a href="app/#/li/stony" class="popular-university-container stony-card">
+                <a href="app/#/li/stony" class="popular-university-container stony-card" >
+                  <div class="university-name">
+                    <h2>Parsons The New Design School</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
                 <a href="app/#/li/cuny" class="popular-university-container cuny-card">
+                  <div class="university-name">
+                    <h2> City University of New York</h2>
+                  </div>
                 </a>
               </div>
             </div>
@@ -347,28 +361,40 @@
             <div class="row">
               <div class="col-md-3">
                 <a href="app/#/li/stony" class="popular-university-container stony-card">
+                  <div class="university-name">
+                    <h2> Stony Brook University</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
                 <a href="app/#/li/cuny" class="popular-university-container cuny-card">
+                  <div class="university-name">
+                    <h2> City University of New York</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
                 <a href="app/#/li/columbia" class="popular-university-container columbia-card">
+                  <div class="university-name">
+                    <h2> Columbia University</h2>
+                  </div>
                 </a>
               </div>
               <div class="col-md-3">
                 <a href="app/#/li/nyu" class="popular-university-container nyu-card">
+                  <div class="university-name">
+                    <h2> New York University</h2>
+                  </div>
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+        <a class="left carousel-control" href="#schools-carousel" role="button" data-slide="prev">
           <i class="icon-angle-left" aria-hidden="true"></i>
           <span class="sr-only">Previous</span>
         </a>
-        <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+        <a class="right carousel-control" href="#schools-carousel" role="button" data-slide="next">
           <i class="icon-angle-right" aria-hidden="true"></i>
           <span class="sr-only">Next</span>
         </a>
@@ -376,9 +402,9 @@
     </div>
 
       <div class="footer">
-        <div class="container">
-          <p><a class="beian" href="http://www.miitbeian.gov.cn/">沪ICP备15009416号-1</a></p>
-          <p>Copyright © 2015 RoomHunter, Inc.</p>
+        <div class="container company-info">
+          <p><a target="_blank" class="beian" href="http://www.miitbeian.gov.cn/">沪ICP备15009416号-1</a></p>
+          <p>Copyright © 2015 <a target="_blank" href="https://www.linkedin.com/company/roomhunter-inc-">RoomHunter, Inc.</a></p>
         </div>
       </div>
     </div>
@@ -407,7 +433,7 @@
     <script src="/bower_components/bootstrap/js/carousel.js"></script>
     <script src="/bower_components/typeahead.js/dist/typeahead.bundle.js"></script>
     <!-- endbuild -->
-    <script src="https://res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
+    <script src="//res.wx.qq.com/connect/zh_CN/htmledition/js/wxLogin.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>

@@ -14,4 +14,5 @@ Tasks
   - [x] according to http://www.gdgny.org/project/gfonts , google font is supported in mainland, needs more testings
 - [ ] super simple mobile homepage
 - [x] university card mask 
+  - [ ] adjust layout in small width
 - [x] link bottom name to linkedin page

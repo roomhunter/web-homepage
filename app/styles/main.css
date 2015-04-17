@@ -85,17 +85,11 @@ h1, h2, h3, h4, h5, h6 {
 #pretzel-video {
   position: absolute;
   width: 100%;
-  bottom: 0;
-  min-width: 100%;
+  height: auto;
   bottom: 0;
 }
-@media (max-width: 800px) {
-  #pretzel-video {
-    display: none;
-  }
-}
+
 .search-area {
-  /*height: 400px;*/
   text-align: center;
   color: white;
   padding-top: 40px;
@@ -224,11 +218,7 @@ h1, h2, h3, h4, h5, h6 {
   margin-top: 0px;
   margin-bottom: 40px;
 }
-@media (min-width: 1400px) {
-  .most-popular > .container {
-    width: 1360px;
-  }
-}
+
 .popular-school-part {
   width: 88%;
   margin: 0 auto;
@@ -245,11 +235,7 @@ h1, h2, h3, h4, h5, h6 {
 .most-popular .carousel-control.left:hover,  .most-popular .carousel-control.right:hover {
   color: #aaa;
 }
-@media (min-width: 768px) {
-  .carousel-indicators {
-    bottom: -20px;
-  }
-}
+
 .carousel-indicators .active {
   background-color: #666;
 }
@@ -276,7 +262,7 @@ a.popular-university-container {
 .university-name {
   margin: 0;
   height: 100%;
-  padding: 50% 0;
+  padding: 145px 0;
   vertical-align: middle;
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -433,4 +419,28 @@ a.popular-university-container {
   display: none;
 }
 
+@media (min-width: 768px) {
+  .carousel-indicators {
+    bottom: -20px;
+  }
+}
 
+@media (min-width: 1400px) {
+  .most-popular > .container {
+    width: 1360px;
+  }
+}
+@media (max-width: 900px) {
+  .popular-school-part {
+    width: 80%;
+  }
+
+  .most-popular .carousel-control.left, .most-popular .carousel-control.right {
+    width: 10%;
+  }
+
+  #pretzel-video {
+    height: 100%;
+    width: auto;
+  }
+}

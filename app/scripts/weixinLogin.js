@@ -18,7 +18,7 @@ var weixinLogin = {
       scope: "snsapi_login",
       redirect_uri: encodeURIComponent(redirect_url),
       state: "",
-      style: "black",
+      style: "black"
       //href: twoDCodeBoxStyleFile
     });
 

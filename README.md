@@ -16,3 +16,4 @@ Tasks
 - [x] university card mask 
   - [ ] adjust layout in small width
 - [x] link bottom name to linkedin page
+- [x] brutally change h font-weight to 700, add text-normal text-light

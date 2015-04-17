@@ -1,10 +1,23 @@
 body {
   min-width: 780px;
   font-family: 'Raleway', 'Helvetica Neue', Helvetica, Arial, 'Hiragino Sans GB', 'Microsoft YaHei',
-  'WenQuanYi Micro Hei', 'Heiti SC', sans-serif;}
+  'WenQuanYi Micro Hei', 'Heiti SC', sans-serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+}
+.text-normal h1, .text-normal h2, .text-normal h3, .text-normal h4, .text-normal h5, .text-normal h6 {
+  font-weight: 400;
+}
 .s1-wrapper {
   position: relative;
   height: 500px;
+}
+.text-light {
+  font-weight: 200;
+}
+.text-normal {
+  font-weight: 400;
 }
 .header,
 .footer {

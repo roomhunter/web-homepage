@@ -144,7 +144,7 @@ module.exports = function (grunt) {
       dist: {
         src: [
           '<%= path.dist %>/scripts/*.js',
-          '<%= path.dist %>/styles/*.css',
+          '<%= path.dist %>/styles/main.css','<%= path.dist %>/styles/vendor.css',
           '<%= path.dist %>/images/*.{png,jpg,jpeg,gif,webp,svg}'
         ]
       }
@@ -225,7 +225,12 @@ module.exports = function (grunt) {
           cwd: '<%= path.app %>/font',
           dest: '<%= path.dist %>/font',
           src: '*.{ttf,woff,svg,eot}'
-        }
+        },{
+            expand: true,
+            cwd: '<%= path.app %>/styles',
+            dest: '<%= path.dist %>/styles',
+            src: 'wechat-related.css'
+          }
         ]
       },
       styles: {

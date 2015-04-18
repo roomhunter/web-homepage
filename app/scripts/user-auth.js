@@ -7,7 +7,7 @@ var userAuth = {
       return 'https://api.roomhunter.us/v1';
     }
     else {
-      return 'https://121.199.3.126:3001/v1';
+      return 'https://test.roomhunter.us:3100/v1/';
     }
   },
   userLabelClicked: function () {
@@ -210,47 +210,6 @@ var userAuth = {
 
       })
     })
-  },
-
-  profileFormSubmit: function () {
-    $('#personal-form-1').submit(function (e) {
-      var first = $('#firstname').val();
-      var last = $('#lastname').val();
-      var uni = $('university').val()
-      if (first == "" && last == "") {
-        $('.form-group').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("The above fields cannot be blank!");
-        return;
-      }
-      else if (first == "") {
-        $('#firstname').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("First name cannot be blank!");
-        return;
-      }
-      else if (last == "") {
-        $('#lastname').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("Last name cannot be blank!");
-        return;
-      }
-      $.ajax({
-        cache: true,
-        type: 'POST',
-        url: $('information-form-1').attr("action"),
-        data: postData,
-        dataType: json,
-        success: function (data) {
-          location.reload();
-        },
-        error: function () {
-          alert("aa");
-        }
-
-      })
-    })
-
   }
 };
 

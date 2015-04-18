@@ -17,3 +17,7 @@ Tasks
   - [x] adjust layout in small width, fix a lot of responsive problems
 - [x] link bottom name to linkedin page
 - [x] brutally change h font-weight to 700, add text-normal text-light
+- [x] distribute video
+  - [x] test one US based CDN(tested metadata, will test AWS tomorrow)
+  - [ ] test one China based CDN with help from Laoban Hu(testing upyun, test Aliyun tomorrow)
+  - [ ] switch source based on request IP address

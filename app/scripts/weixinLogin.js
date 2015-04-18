@@ -9,7 +9,7 @@ var weixinLogin = {
     var appId = "wxc685011a4fb095bd";
     var appSecret = "5ae24c2aa5bca08b8c8732df9ccf9a3f";
     var redirect_url = "https://test.roomhunter.us";
-    var requestUserInfoUrl = userAuth.apiHost()+"users/wechat/login";
+    var requestUserInfoUrl = userAuth.apiHost()+"users/wlogin";
     var twoDCodeBoxStyleFile = "https://test.roomhunter.us/styles/wechat-related.css";
 
     new WxLogin({

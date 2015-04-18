@@ -18,14 +18,14 @@ var weixinLogin = {
       scope: "snsapi_login",
       redirect_uri: encodeURIComponent(redirect_url),
       state: "",
-      style: "black"
-      //href: twoDCodeBoxStyleFile
+      style: "black",
+      href: twoDCodeBoxStyleFile
     });
 
 
     //limit the height of wechat 2D code
     $("iframe").each(function () {
-      $(this).css("height", "350px");
+      $(this).css("height", "300px");
     });
 
     var getUrlParam = function (name) {

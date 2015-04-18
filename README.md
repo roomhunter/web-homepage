@@ -19,5 +19,7 @@ Tasks
 - [x] brutally change h font-weight to 700, add text-normal text-light
 - [x] distribute video
   - [x] test one US based CDN(tested metadata, will test AWS tomorrow)
-  - [ ] test one China based CDN with help from Laoban Hu(testing upyun, test Aliyun tomorrow)
-  - [ ] switch source based on request IP address
+  - [x] test one China based CDN with help from Laoban Hu(testing upyun, test Aliyun tomorrow)
+    - [x] Aliyun CDN sucks, use upyun instead, deprecate Aliyun whenever possible
+  - [x] switch source based on request IP address(done), will test will Laoban Hu
+  

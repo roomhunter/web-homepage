@@ -1,12 +1,13 @@
 'use strict';
 
 var userAuth = {
+
   apiHost: function () {
     if (location.hostname === 'roomhunter.us') {
       return 'https://api.roomhunter.us/v1';
     }
     else {
-      return 'https://121.199.3.126:3001/v1';
+      return 'https://test.roomhunter.us:3100/v1/';
     }
   },
   userLabelClicked: function () {
@@ -45,25 +46,39 @@ var userAuth = {
       userAuth.displayRegisterAndLogin()
     }
   },
+
   registerButtonClicked: function () {
     $('#register').click(function () {
-      $('#register-modal').modal('show');
+      $('#login-modal').modal('show');
+      $('#msg').hide("fast");
+      $('.form-group').removeClass("has-error");
+      $('.login-related').addClass('hidden');
+      $('.register-related').removeClass('hidden');
     });
   },
   loginButtonClicked: function () {
     $('#login').click(function () {
       $('#login-modal').modal('show');
+      $('#msg').hide("fast");
+      $('.form-group').removeClass("has-error");
+      $('.register-related').addClass('hidden');
+      $('.login-related').removeClass('hidden');
     });
   },
   forgetPwdButtonClicked: function () {
     $('#forgetPwd').click(function () {
       $('#login-modal').modal('hide');
       $('#forgetPwd-modal').modal('show');
+      $('.form-group').removeClass("has-error");
     })
 
   },
+  emailRegex: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/,
+
   registerFormSubmit: function () {
+    $('#msg').hide("fast");
     $('#register-submit').click(function () {
+      $('.form-group').removeClass("has-error");
       var host_url = userAuth.apiHost() + '/users/register';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
@@ -71,20 +86,12 @@ var userAuth = {
       var lastname = $('#lastName').val();
       if (email == "" || pwd == ""||firstname==""||lastname=="") {
         $('.form-group').addClass("has-error");
-        e.preventDefault();
-        $('#msg').show("slow").html("The above fields cannot be blank!");
+        $('#msg').show("slow").html("The following fields cannot be blank!");
         return;
       }
-      var end = email.split(".");
-      if (end.length == 1) {
-        $('#emailaddress').addClass("has-error");
+      if (!userAuth.emailRegex.test(email)) {
+        $('.email-form-group').addClass("has-error");
         $('#msg').show("slow").html("Invalid email address!");
-        e.preventDefault();
-        return;
-      }
-      if (end[1] != "edu") {
-        $('#emailaddress').addClass("has-error");
-        $('#msg').show("slow").html("You must register with an .edu email address!");
         return;
       };
       <!-- use ajax to submit -->
@@ -119,27 +126,26 @@ var userAuth = {
 
   loginFormSubmit: function () {
     $('#login-submit').click(function(){
+      $('.form-group').removeClass("has-error");
+      $('#msg').hide("fast");
       var host_url = userAuth.apiHost() + '/users/login';
-      var email = $('#emailaddress1').val();
-      var pwd = $('#password1').val();
+      var email = $('#emailaddress').val();
+      var pwd = $('#password').val();
       if(email==""&&pwd=="") {
         $('.form-group').addClass("has-error");
-        e.preventDefault();
-        $('#msg2').show("slow").html("The above fields cannot be blank!");
+        $('#msg').show("slow").html("The following fields cannot be blank!");
         return;
       }
-      else if(email=="") {
-        $('#emailaddress').addClass("has-error");
-        e.preventDefault();
-        $('#msg2').show("slow").html("Email address cannot be blank!");
+      else if(!userAuth.emailRegex.test(email)) {
+        $('.email-form-group').addClass("has-error");
+        $('#msg').show("slow").html("Invalid email address!");
         return;
       }
       else if(pwd=="") {
-        $('#password').addClass("has-error");
-        e.preventDefault();
-        $('#msg2').show("slow").html("Password cannot be blank!");
+        $('#msg').show("slow").html("Password cannot be blank!");
         return;
       }
+
       var postData_login = $('#login-form').serialize();
 
       $.ajax({
@@ -177,7 +183,8 @@ var userAuth = {
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
       localStorage.removeItem("userFirstName");
-      $('.none-cached-user-info').css('display', 'block');
+      $('#register').show();
+      $('#login').show();
       $('.has-cached-user-info').css('display', 'none');
       //window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
     })
@@ -204,47 +211,6 @@ var userAuth = {
 
       })
     })
-  },
-
-  profileFormSubmit: function () {
-    $('#personal-form-1').submit(function (e) {
-      var first = $('#firstname').val();
-      var last = $('#lastname').val();
-      var uni = $('university').val()
-      if (first == "" && last == "") {
-        $('.form-group').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("The above fields cannot be blank!");
-        return;
-      }
-      else if (first == "") {
-        $('#firstname').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("First name cannot be blank!");
-        return;
-      }
-      else if (last == "") {
-        $('#lastname').addClass("has-error");
-        e.preventDefault();
-        $('#msg3').show("slow").html("Last name cannot be blank!");
-        return;
-      }
-      $.ajax({
-        cache: true,
-        type: 'POST',
-        url: $('information-form-1').attr("action"),
-        data: postData,
-        dataType: json,
-        success: function (data) {
-          location.reload();
-        },
-        error: function () {
-          alert("aa");
-        }
-
-      })
-    })
-
   }
 };
 

@@ -8,33 +8,24 @@ var weixinLogin = {
   initialization: function () {
     var appId = "wxc685011a4fb095bd";
     var appSecret = "5ae24c2aa5bca08b8c8732df9ccf9a3f";
-    var redirect_url = "http://121.199.3.126";
-    var requestUserInfoUrl = "http://121.199.3.126:3000/v1/users/wechat/login"
-    var twoDCodeBoxStyleFile = "http://localhost:9000/styles/wechat-related.css";
+    var redirect_url = "https://test.roomhunter.us";
+    var requestUserInfoUrl = userAuth.apiHost()+"users/wechat/login";
+    var twoDCodeBoxStyleFile = "https://test.roomhunter.us/styles/wechat-related.css";
 
-    var wechat_login = new WxLogin({
+    new WxLogin({
       id: "wechat-login-2D-code",
       appid: appId,
       scope: "snsapi_login",
       redirect_uri: encodeURIComponent(redirect_url),
       state: "",
-      style: "black"
-      //href: twoDCodeBoxStyleFile
+      style: "black",
+      href: twoDCodeBoxStyleFile
     });
 
-    //var wechat_register = new WxLogin({
-    //  id: "wechat-register-2D-code",
-    //  appid: appId,
-    //  scope: "snsapi_login",
-    //  redirect_uri: encodeURIComponent(redirect_url),
-    //  state: "",
-    //  style: "black"
-    //  href: twoDCodeBoxStyleFile
-    //});
 
-
+    //limit the height of wechat 2D code
     $("iframe").each(function () {
-      $(this).css("height", "350px");
+      $(this).css("height", "300px");
     });
 
     var getUrlParam = function (name) {

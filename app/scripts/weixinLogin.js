@@ -62,6 +62,12 @@ var weixinLogin = {
           $('.has-cached-user-info').show();
           $('#register').hide();
           $('#login').hide();
+
+          //check if the user need to register for other information
+          if(data.error.code == 201){
+            $('#alertMessageToRegister').show();
+            setTimeout("window.location.href='https://test.roomhunter.us/app/#/user/register-remaining-info'",3000);
+          }
         },
         error: function () {
           console.log("error");

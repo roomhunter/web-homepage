@@ -24,7 +24,7 @@ var userAuth = {
   },
   displayUserLabel: function () {
     var id = localStorage.getItem('userId'),
-      name = localStorage.getItem('userFirstName'),
+      name = localStorage.getItem('firstName'),
       avatar = localStorage.getItem('userAvatar'),
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
@@ -36,7 +36,7 @@ var userAuth = {
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
     var id = localStorage.getItem('userId');
-    var name = localStorage.getItem('userFirstName');
+    var name = localStorage.getItem('firstName');
     var avatar = localStorage.getItem('userAvatar');
 
     if (t && name && avatar && id) {
@@ -79,7 +79,7 @@ var userAuth = {
     $('#msg').hide("fast");
     $('#register-submit').click(function () {
       $('.form-group').removeClass("has-error");
-      var host_url = userAuth.apiHost() + '/users/register';
+      var host_url = userAuth.apiHost() + 'users/register';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
       var firstname = $('#firstName').val();
@@ -106,7 +106,7 @@ var userAuth = {
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
-          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
@@ -128,7 +128,7 @@ var userAuth = {
     $('#login-submit').click(function(){
       $('.form-group').removeClass("has-error");
       $('#msg').hide("fast");
-      var host_url = userAuth.apiHost() + '/users/login';
+      var host_url = userAuth.apiHost() + 'users/login';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
       if(email==""&&pwd=="") {
@@ -159,7 +159,7 @@ var userAuth = {
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
-          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
@@ -174,25 +174,49 @@ var userAuth = {
           //alert("aa");
         }
 
-      })
+      });
     })
   },
   logOut: function () {
     $('#logout').click(function () {
+      var userToken = localStorage.getItem('userToken');
       localStorage.removeItem("userToken");
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
-      localStorage.removeItem("userFirstName");
+      localStorage.removeItem("firstName");
       $('#register').show();
       $('#login').show();
       $('.has-cached-user-info').css('display', 'none');
+      var postData = {
+        userToken: userToken
+      };
+
+      $.ajax({
+        cache:true,
+        type:'GET',
+        url:userAuth.apiHost()+'users/logout',
+        data:postData,
+        dataType:'JSON',
+        success:function(data){
+          if(data.error.code==200){
+            console.log('success');
+          }
+
+        },
+        error:function(data){
+          console.log('error');
+        }
+
+
+      });
+
       //window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
-    })
+    });
   },
 
   forgetPwdFormSubmit: function () {
     $('#forgetPwd-submit').click(function () {
-      var host_url = userAuth.apiHost() + "/users/forget-pwd";
+      var host_url = userAuth.apiHost() + "users/forget-pwd";
       $.ajax({
         cache:true,
         type:"POST",

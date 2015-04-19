@@ -77,6 +77,12 @@
             </li>
           </ul>
           <a href="/"><h3 class="logo"><img src="images/v3-white.png"></h3></a>
+
+          <div class="alert alert-danger" role="alert" id="alertMessageToRegister">
+            <span> Please register your personal information. The page is automatically redirected after 3 seconds</span>
+          </div>
+
+
         </div>
       </div>
 
@@ -106,18 +112,14 @@
                 <div class="img-circle" id="wechat-login-2D-code">
                 </div>
               </div>
-              <div class="signup-or-separator">
+              <div class="signup-or-separator login-related">
                 <h6 class="shift text text-special">OR</h6>
                 <hr>
               </div>
-              <div class="login-by-email">
+              <div class="login-by-email login-related">
                 <div class="text-center login-related">
                   <i class="icon-mail"></i>
                   Login Using Registered Email
-                </div>
-                <div class="text-center register-related">
-                  <i class="icon-mail"></i>
-                  Register Using Email
                 </div>
                 <div class="loginOrRegister-content">
                   <form class="form-horizontal" id="login-form">
@@ -137,18 +139,6 @@
                       </div>
                     </div>
 
-                    <div class="form-group register-related">
-                      <div class="col-sm-12">
-                        <input class="form-control" type="text" name="firstName" id="firstName" placeholder="First Name">
-                      </div>
-                    </div>
-                    <div class="form-group register-related">
-                      <div class="col-sm-12">
-                        <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Last Name">
-                      </div>
-                    </div>
-
-
                       <label for="remember_me2" class='remember-me login-related'>
                         <input type="checkbox" name="remember_me" id="remember_me2" value="true" class="remember_me"/>
                         Auto-login
@@ -157,11 +147,6 @@
                     <div class="submit login-related">
                       <p style="text-align: center">
                       <input id="login-submit" class="btn btn-primary submit-button" value="Login">
-                      </p>
-                    </div>
-                    <div class="submit register-related">
-                      <p style="text-align: center">
-                        <input id="register-submit" class="btn btn-primary submit-button" value="Register">
                       </p>
                     </div>
 

@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 .title-zh {
   font-size: 49px;
   letter-spacing: 15px;
-  margin-left: 14px;
+  margin-left: 15px;
 }
 .title-en {
   font-size: 49px;
@@ -117,6 +117,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .bottom-line-zh {
   letter-spacing: 5px;
+  margin-left: 5px;
 }
 .bottom-line-en {
   font-size: 17.5px;

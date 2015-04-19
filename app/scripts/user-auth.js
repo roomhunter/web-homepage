@@ -174,11 +174,12 @@ var userAuth = {
           //alert("aa");
         }
 
-      })
+      });
     })
   },
   logOut: function () {
     $('#logout').click(function () {
+      var userToken = localStorage.getItem('userToken');
       localStorage.removeItem("userToken");
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
@@ -186,8 +187,31 @@ var userAuth = {
       $('#register').show();
       $('#login').show();
       $('.has-cached-user-info').css('display', 'none');
+      var postData = {
+        userToken: userToken
+      };
+
+      $.ajax({
+        cache:true,
+        type:'GET',
+        url:userAuth.apiHost()+'users/logout',
+        data:postData,
+        dataType:'JSON',
+        success:function(data){
+          if(data.error.code==200){
+            console.log('success');
+          }
+
+        },
+        error:function(data){
+          console.log('error');
+        }
+
+
+      });
+
       //window.location.href = location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : 'https://121.199.3.126';
-    })
+    });
   },
 
   forgetPwdFormSubmit: function () {

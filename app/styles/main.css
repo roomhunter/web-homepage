@@ -462,6 +462,17 @@ a.popular-university-container {
   .most-popular > .container {
     width: 1360px;
   }
+
+  .s1-wrapper {
+    height: 800px;
+  }
+
+  .video {
+    height: 800px;
+  }
+  .search-area {
+    padding-top: 160px;
+  }
 }
 @media (max-width: 900px) {
   .popular-school-part {

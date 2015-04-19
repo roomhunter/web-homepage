@@ -24,7 +24,7 @@ var userAuth = {
   },
   displayUserLabel: function () {
     var id = localStorage.getItem('userId'),
-      name = localStorage.getItem('userFirstName'),
+      name = localStorage.getItem('firstName'),
       avatar = localStorage.getItem('userAvatar'),
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
@@ -36,7 +36,7 @@ var userAuth = {
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
     var id = localStorage.getItem('userId');
-    var name = localStorage.getItem('userFirstName');
+    var name = localStorage.getItem('firstName');
     var avatar = localStorage.getItem('userAvatar');
 
     if (t && name && avatar && id) {
@@ -106,7 +106,7 @@ var userAuth = {
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
-          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
@@ -159,7 +159,7 @@ var userAuth = {
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
-          localStorage.setItem('userFirstName',obj.firstName);
+          localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
@@ -182,7 +182,7 @@ var userAuth = {
       localStorage.removeItem("userToken");
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
-      localStorage.removeItem("userFirstName");
+      localStorage.removeItem("firstName");
       $('#register').show();
       $('#login').show();
       $('.has-cached-user-info').css('display', 'none');

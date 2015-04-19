@@ -95,7 +95,7 @@ h1, h2, h3, h4, h5, h6 {
 .search-area {
   text-align: center;
   color: white;
-  padding-top: 40px;
+  padding-top: 70px;
 }
 .search-area h1 {
   font-size: 46px;
@@ -462,7 +462,8 @@ a.popular-university-container {
   .most-popular > .container {
     width: 1360px;
   }
-
+}
+@media (min-width: 1700px) {
   .s1-wrapper {
     height: 800px;
   }

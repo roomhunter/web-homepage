@@ -79,7 +79,7 @@ var userAuth = {
     $('#msg').hide("fast");
     $('#register-submit').click(function () {
       $('.form-group').removeClass("has-error");
-      var host_url = userAuth.apiHost() + '/users/register';
+      var host_url = userAuth.apiHost() + 'users/register';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
       var firstname = $('#firstName').val();
@@ -128,7 +128,7 @@ var userAuth = {
     $('#login-submit').click(function(){
       $('.form-group').removeClass("has-error");
       $('#msg').hide("fast");
-      var host_url = userAuth.apiHost() + '/users/login';
+      var host_url = userAuth.apiHost() + 'users/login';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
       if(email==""&&pwd=="") {
@@ -192,7 +192,7 @@ var userAuth = {
 
   forgetPwdFormSubmit: function () {
     $('#forgetPwd-submit').click(function () {
-      var host_url = userAuth.apiHost() + "/users/forget-pwd";
+      var host_url = userAuth.apiHost() + "users/forget-pwd";
       $.ajax({
         cache:true,
         type:"POST",

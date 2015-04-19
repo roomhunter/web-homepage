@@ -106,10 +106,26 @@ h1, h2, h3, h4, h5, h6 {
   margin-bottom: 50px;
   font-weight: bold;
 }
-
+.title-zh {
+  font-size: 49px;
+  letter-spacing: 15px;
+  margin-left: 14px;
+}
+.title-en {
+  font-size: 49px;
+  letter-spacing: 1px;
+}
+.bottom-line-zh {
+  letter-spacing: 5px;
+}
+.bottom-line-en {
+  font-size: 17.5px;
+}
 .university-input {
   display: block;
-  max-width: 400px;
+  /*max-width: 400px;*/
+  max-width: 430px;
+
   position: relative;
   margin: 40px auto;
   text-align: center;
@@ -121,7 +137,7 @@ h1, h2, h3, h4, h5, h6 {
 .university-typeahead,
 .tt-query,
 .tt-hint {
-  width: 300px;
+  width: 330px;
   height: 44px;
   padding: 8px 12px;
   font-size: 24px;
@@ -152,7 +168,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .tt-dropdown-menu {
-  width: 400px;
+  width: 430px;
   margin-top: 2px;
   padding: 8px 0;
   background-color: rgba(255, 255, 255, 0.75);
@@ -256,7 +272,7 @@ a.popular-university-container {
   background-size: cover;
   background-position: 50% 25%;
   margin-bottom: 40px;;
-  height: 400px;
+  height: 280px;
   position: relative;
   display: block;
   background-size: cover;
@@ -265,7 +281,7 @@ a.popular-university-container {
 .university-name {
   margin: 0;
   height: 100%;
-  padding: 145px 0;
+  padding: 105px 0;
   vertical-align: middle;
   background: rgba(0, 0, 0, 0.3);
   color: #fff;

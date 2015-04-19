@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .s1-wrapper {
   position: relative;
-  height: 500px;
+  height: 600px;
 }
 .text-light {
   font-weight: 200;
@@ -75,7 +75,7 @@ h1, h2, h3, h4, h5, h6 {
   right: 0;
   left: 0;
   top: 0;
-  height: 500px;
+  height: 600px;
   overflow: hidden;
   min-width: 780px;
   width: auto;
@@ -83,10 +83,13 @@ h1, h2, h3, h4, h5, h6 {
   background-size: cover;
 }
 #pretzel-video {
-  position: absolute;
+  /*display: block;*/
+  /*margin: 0 auto;*/
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
   width: 100%;
   height: auto;
-  bottom: 0;
 }
 
 .search-area {
@@ -452,7 +455,8 @@ a.popular-university-container {
   .most-popular .carousel-control.left, .most-popular .carousel-control.right {
     width: 10%;
   }
-
+}
+@media (max-width: 1067px) {
   #pretzel-video {
     height: 100%;
     width: auto;

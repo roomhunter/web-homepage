@@ -48,7 +48,8 @@ var userAuth = {
   },
 
   registerButtonClicked: function () {
-    $('#register').click(function () {
+    $('#register').click(function (e) {
+      e.preventDefault();
       $('#login-modal').modal('show');
       $('#msg').hide("fast");
       $('.form-group').removeClass("has-error");
@@ -57,7 +58,8 @@ var userAuth = {
     });
   },
   loginButtonClicked: function () {
-    $('#login').click(function () {
+    $('#login').click(function (e) {
+      e.preventDefault();
       $('#login-modal').modal('show');
       $('#msg').hide("fast");
       $('.form-group').removeClass("has-error");
@@ -66,7 +68,8 @@ var userAuth = {
     });
   },
   forgetPwdButtonClicked: function () {
-    $('#forgetPwd').click(function () {
+    $('#forgetPwd').click(function (e) {
+      e.preventDefault();
       $('#login-modal').modal('hide');
       $('#forgetPwd-modal').modal('show');
       $('.form-group').removeClass("has-error");
@@ -125,7 +128,8 @@ var userAuth = {
   },
 
   loginFormSubmit: function () {
-    $('#login-submit').click(function(){
+    $('#login-submit').click(function(e){
+      e.preventDefault();
       $('.form-group').removeClass("has-error");
       $('#msg').hide("fast");
       var host_url = userAuth.apiHost() + 'users/login';
@@ -178,7 +182,8 @@ var userAuth = {
     })
   },
   logOut: function () {
-    $('#logout').click(function () {
+    $('#logout').click(function (e) {
+      e.preventDefault();
       var userToken = localStorage.getItem('userToken');
       localStorage.removeItem("userToken");
       localStorage.removeItem("userId");
@@ -215,7 +220,8 @@ var userAuth = {
   },
 
   forgetPwdFormSubmit: function () {
-    $('#forgetPwd-submit').click(function () {
+    $('#forgetPwd-submit').click(function (e) {
+      e.preventDefault();
       var host_url = userAuth.apiHost() + "users/forget-pwd";
       $.ajax({
         cache:true,

@@ -80,6 +80,8 @@ h1, h2, h3, h4, h5, h6 {
   min-width: 780px;
   width: auto;
   background: url('https://roomhunter-images.b0.upaiyun.com/apartments/0476bbaafa7cbecb225b61ce003aa7a7.jpg') no-repeat;
+  /*background: url('https://d1mnrj0eye9ccu.cloudfront.net/image/bg-324dsfx.png') no-repeat;*/
+  background-padding: 50% 50%;
   background-size: cover;
 }
 #pretzel-video {

@@ -21,7 +21,7 @@
     <!--[if lt IE 9]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    <div class="s1-wrapper">
+    <div id="s1-wrapper">
       <div class="container">
         <div class="header">
           <ul class="nav navbar-nav navbar-right rh-nav">
@@ -162,7 +162,6 @@
                         <input id="login-submit" class="btn btn-primary submit-button" value="Login">
                       </p>
                     </div>
-
                   </form>
                 </div>
               </div>
@@ -171,7 +170,6 @@
           </div>
         </div>
       </div>
-
 
       <!-- modal for forget password -->
       <div class="modal fade" id="forgetPwd-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -214,12 +212,25 @@
       </div>
 
       <div class="caption">
-        <div class="video">
+        <div class="video" id="video-wrapper">
           <video autoplay="true" loop="loop" preload="auto" id="pretzel-video" class="hidden-xs">
             <!--<source src="http://roomhunter-static.b0.upaiyun.com/video/2.mp4" type='video/mp4'>-->
             <source src="https://d1mnrj0eye9ccu.cloudfront.net/video/2.mp4" type='video/mp4'>
           </video>
         </div>
+        <script>
+          // must execute ASAP after the dom of video loaded to avoid transition
+          function adjustVideo() {
+            var s1Wrapper = document.getElementById('s1-wrapper');
+            var videoWrapper = document.getElementById('video-wrapper');
+            var width = window.innerWidth;
+            var height = width / 2.35;
+            s1Wrapper.style.height = height + 'px';
+            videoWrapper.style.height = height + 'px';
+          }
+          adjustVideo();
+          window.onresize = adjustVideo;
+        </script>
 
         <div class="search-area">
           <div class="head-line">

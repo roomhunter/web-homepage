@@ -22,4 +22,5 @@ Tasks
   - [x] test one China based CDN with help from Laoban Hu(testing upyun, test Aliyun tomorrow)
     - [x] Aliyun CDN sucks, use upyun instead, deprecate Aliyun whenever possible
   - [x] switch source based on request IP address(done), will test will Laoban Hu
+- [x] css, js, fonts distributed by geo-cognitive CDNs
   

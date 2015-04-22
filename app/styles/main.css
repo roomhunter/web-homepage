@@ -128,8 +128,9 @@ h1, h2, h3, h4, h5, h6 {
   letter-spacing: 1px;
 }
 .bottom-line-zh {
-  letter-spacing: 5px;
+  letter-spacing: 5.5px;
   margin-left: 5px;
+  font-size: 17.5px;
 }
 .bottom-line-en {
   font-size: 17.5px;

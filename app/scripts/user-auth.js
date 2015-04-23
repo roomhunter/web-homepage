@@ -3,12 +3,7 @@
 var userAuth = {
 
   apiHost: function () {
-    if (location.hostname === 'roomhunter.us') {
-      return 'https://api.roomhunter.us/v1';
-    }
-    else {
-      return 'https://test.roomhunter.us:3100/v1/';
-    }
+    return location.hostname === 'roomhunter.us' ? 'https://api.roomhunter.us/v1' : 'https://test.roomhunter.us:3100/v1/';
   },
   userLabelClicked: function () {
     $('#user-label').click(function () {
@@ -29,7 +24,7 @@ var userAuth = {
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
     $('.has-cached-user-info').css('display', 'block');
-    userLabel.attr('href', 'app/#/user/edit/' + id);
+    //userLabel.attr('href', 'app/#/user/edit/' + id);
     userLabel.children('span').text(name);
     userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
@@ -168,7 +163,8 @@ var userAuth = {
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');
-          $('#user-label').attr("href",userHref + obj.userId);
+          //$('#user-label').attr("href",userHref + obj.userId);
+
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();

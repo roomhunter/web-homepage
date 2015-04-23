@@ -56,7 +56,7 @@ schoolInput = {
 
       e.preventDefault();
       localStorage.setItem('lastSearch', input);
-      window.location = 'app/#/li/' + url;
+      window.location = 'app/#/list/' + url;
     });
 
   },
@@ -104,7 +104,7 @@ schoolInput = {
           return false;
         }
         localStorage.setItem('lastSearch', input);
-        window.location = 'app/#/li/' + url;
+        window.location = 'app/#/list/' + url;
       })
       .on('typeahead:cursorchanged', function () {
         console.log($('#search-str').val());

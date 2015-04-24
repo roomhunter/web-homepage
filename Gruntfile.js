@@ -233,8 +233,12 @@ module.exports = function (grunt) {
           cwd: '<%= path.app %>/styles',
           dest: '<%= path.dist %>/styles',
           src: 'wechat-related.css'
-          }
-        ]
+        },{
+          expand: true,
+          cwd: '<%= path.app %>/images',
+          dest: '<%= path.dist %>/images',
+          src: '*.svg'
+        }]
       },
       styles: {
         expand: true,

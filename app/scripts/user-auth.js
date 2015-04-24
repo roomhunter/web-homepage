@@ -41,16 +41,17 @@ var userAuth = {
     }
   },
 
-  registerButtonClicked: function () {
-    $('#register').click(function (e) {
-      e.preventDefault();
-      $('#login-modal').modal('show');
-      $('#msg').hide("fast");
-      $('.form-group').removeClass("has-error");
-      $('.login-related').addClass('hidden');
-      $('.register-related').removeClass('hidden');
-    });
-  },
+  //registerButtonClicked: function () {
+  //  $('#register').click(function (e) {
+  //    e.preventDefault();
+  //    $('#login-modal').modal('show');
+  //    $('#msg').hide("fast");
+  //    $('.form-group').removeClass("has-error");
+  //    $('.login-related').addClass('hidden');
+  //    $('.register-related').removeClass('hidden');
+  //  });
+  //},
+
   loginButtonClicked: function () {
     $('#login').click(function (e) {
       e.preventDefault();
@@ -81,54 +82,55 @@ var userAuth = {
   },
   emailRegex: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/,
 
-  registerFormSubmit: function () {
-    $('#msg').hide("fast");
-    $('#register-submit').click(function () {
-      $('.form-group').removeClass("has-error");
-      var host_url = userAuth.apiHost() + 'users/register';
-      var email = $('#emailaddress').val();
-      var pwd = $('#password').val();
-      var firstname = $('#firstName').val();
-      var lastname = $('#lastName').val();
-      if (email == "" || pwd == ""||firstname==""||lastname=="") {
-        $('.form-group').addClass("has-error");
-        $('#msg').show("slow").html("The following fields cannot be blank!");
-        return;
-      }
-      if (!userAuth.emailRegex.test(email)) {
-        $('.email-form-group').addClass("has-error");
-        $('#msg').show("slow").html("Invalid email address!");
-        return;
-      };
-      <!-- use ajax to submit -->
-      var postData_register = $('#register-form').serialize();
-      $.ajax({
-        cache:true,
-        type:"POST",
-        url:host_url,
-        data:postData_register,
-        dataType:"json",
-        success:function(data){
-          var obj = eval(data.data);
-          localStorage.setItem('userToken',obj.userToken);
-          localStorage.setItem('userId',obj.userId);
-          localStorage.setItem('firstName',obj.firstName);
-          localStorage.setItem('userAvatar',obj.userAvatar);
-          $('#register').hide();
-          $('#login').hide();
-          var userHref = $('#user-label').attr('href');
-          $('#user-label').attr("href",userHref + obj.userId);
-          $('#user-name').text(obj.firstName);
-          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
-          $('.has-cached-user-info').show();
-          $('#register-modal').modal('hide');
-        },
-        error:function(){
-          //alert("aa");
-        }
-      })
-    })
-  },
+  //registerFormSubmit: function () {
+  //  $('#msg').hide("fast");
+  //  $('#register-submit').click(function () {
+  //    $('.form-group').removeClass("has-error");
+  //    var host_url = userAuth.apiHost() + 'users/register';
+  //    var email = $('#emailaddress').val();
+  //    var pwd = $('#password').val();
+  //    var firstname = $('#firstName').val();
+  //    var lastname = $('#lastName').val();
+  //    if (email == "" || pwd == ""||firstname==""||lastname=="") {
+  //      $('.form-group').addClass("has-error");
+  //      $('#msg').show("slow").html("The following fields cannot be blank!");
+  //      return;
+  //    }
+  //    if (!userAuth.emailRegex.test(email)) {
+  //      $('.email-form-group').addClass("has-error");
+  //      $('#msg').show("slow").html("Invalid email address!");
+  //      return;
+  //    };
+  //    <!-- use ajax to submit -->
+  //    var postData_register = $('#register-form').serialize();
+  //    $.ajax({
+  //      cache:true,
+  //      type:"POST",
+  //      url:host_url,
+  //      data:postData_register,
+  //      dataType:"json",
+  //      success:function(data){
+  //        var obj = eval(data.data);
+  //        localStorage.setItem('userToken',obj.userToken);
+  //        localStorage.setItem('userId',obj.userId);
+  //        localStorage.setItem('firstName',obj.firstName);
+  //        localStorage.setItem('userAvatar',obj.userAvatar);
+  //        $('#register').hide();
+  //        $('#login').hide();
+  //        var userHref = $('#user-label').attr('href');
+  //        $('#user-label').attr("href",userHref + obj.userId);
+  //        $('#user-name').text(obj.firstName);
+  //        $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
+  //        $('.has-cached-user-info').show();
+  //        $('#register-modal').modal('hide');
+  //      },
+  //      error:function(){
+  //        //alert("aa");
+  //      }
+  //    })
+  //  })
+  //},
+
 
   loginFormSubmit: function () {
     $('#login-form').submit(function(e){
@@ -172,8 +174,6 @@ var userAuth = {
           localStorage.setItem('userAvatar',obj.userAvatar);
           $('#register').hide();
           $('#login').hide();
-          var userHref = $('#user-label').attr('href');
-
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
@@ -213,9 +213,8 @@ var userAuth = {
           if(data.error.code==200){
             console.log('success');
           }
-
         },
-        error:function(data){
+        error:function(){
           console.log('error');
         }
 
@@ -227,23 +226,25 @@ var userAuth = {
   },
 
   forgetPwdFormSubmit: function () {
-    $('#forgetPwd-submit').click(function (e) {
+    $('#forgetPwd-form').submit(function (e) {
       e.preventDefault();
       var host_url = userAuth.apiHost() + "users/forget-pwd";
+      $('.button-loading-img').removeClass('invisible');
       $.ajax({
         cache:true,
         type:"POST",
         url:host_url,
         data:$('#forgetPwd-form').serialize(),
         dataType:"json",
-        success:function(data){
+        success:function(){
+          $('.button-loading-img').addClass('invisible');
           $('#forgetPwd-modal').modal('hide');
           $('#alertMessage').show();
           setTimeout("$('#alertMessage').hide()",5000);
-
         },
         error:function(){
           console.log("error");
+          $('.button-loading-img').addClass('invisible');
         }
 
       })

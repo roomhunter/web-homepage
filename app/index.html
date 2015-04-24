@@ -100,14 +100,14 @@
             </div>
             <div class="modal-body">
               <div class="login-by-wechat text-center">
-                <h3 class="login-related">
+                <h5 class="login-related">
                   <span class="zh invisible">微信扫码登录</span>
                   <span class="en hidden">Login via Wechat</span>
-                </h3>
-                <h3 class="register-related">
+                </h5>
+                <h5 class="register-related">
                   <span class="zh invisible">微信扫码注册</span>
                   <span class="en hidden">Register via Wechat</span>
-                </h3>
+                </h5>
                 <div class="img-circle" id="wechat-login-2D-code">
                 </div>
               </div>
@@ -196,7 +196,11 @@
                     </div>
                     <div class="submit">
                       <p style="text-align:center">
-                        <input  class="btn btn-success submit-button text-center" value="Sent Email" id="forgetPwd-submit">
+                        <button  type="submit" class="btn btn-success submit-button text-center" id="forgetPwd-submit">
+                          <img src="images/loading.svg" class="button-loading-img invisible">
+                          <span class="zh invisible">发送邮件</span>
+                          <span class="en hidden">Send Email</span>
+                        </button>
                       </p>
                     </div>
                   </form>

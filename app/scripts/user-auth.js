@@ -232,7 +232,7 @@ var userAuth = {
       $('.button-loading-img').removeClass('invisible');
       $.ajax({
         cache:true,
-        type:"POST",
+        type:"GET",
         url:host_url,
         data:$('#forgetPwd-form').serialize(),
         dataType:"json",

@@ -147,7 +147,8 @@ module.exports = function (grunt) {
           //'<%= path.dist %>/styles/*.css',
           '<%= path.dist %>/styles/main.css',
           '<%= path.dist %>/styles/vendor.css',
-          '<%= path.dist %>/images/*.{png,jpg,jpeg,gif,webp,svg}'
+          '<%= path.dist %>/images/*.{png,jpg,jpeg,gif,webp,svg}',
+          '<%= path.dist %>/fonts/*.{svg,eot,ttf,woff}'
         ]
       }
     },
@@ -224,8 +225,8 @@ module.exports = function (grunt) {
           ]
         },{
           expand: true,
-          cwd: '<%= path.app %>/font',
-          dest: '<%= path.dist %>/font',
+          cwd: '<%= path.app %>/fonts',
+          dest: '<%= path.dist %>/fonts',
           src: '*.{ttf,woff,svg,eot}'
         },{
           expand: true,

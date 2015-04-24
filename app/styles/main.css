@@ -258,7 +258,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 .most-popular .carousel-control.left,  .most-popular .carousel-control.right{
   background-image: none;
-  font-size: 70px;
+  font-size: 50px;
   color: #666;
   opacity: 1;
   filter: alpha(opacity=100);
@@ -278,8 +278,8 @@ h1, h2, h3, h4, h5, h6 {
 .carousel-control i {
   top: 50%;
   left: 50%;
-  margin-top: -35px;
-  margin-left: -49px;
+  margin-top: -21px;
+  margin-left: -42px;
   position: absolute;
 }
 a.popular-university-container {
@@ -402,6 +402,12 @@ a.popular-university-container {
 .submit-button{
   width:130px;
   background-color: #00A693;
+  position: relative;
+}
+.button-loading-img {
+  position: absolute;
+  left: 10px;
+  width: 20px;
 }
 .error-message{
   color: #880000;

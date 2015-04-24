@@ -23,7 +23,6 @@ $( document ).ready(function() {
   userAuth.logOut();
   userAuth.registerFormSubmit();
   userAuth.forgetPwdFormSubmit();
-
-
+  userAuth.noAccountButtonClicked();
 
 });

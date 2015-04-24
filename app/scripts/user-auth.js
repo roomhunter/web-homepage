@@ -24,7 +24,6 @@ var userAuth = {
       userLabel = $('#user-label');
     $('.none-cached-user-info').css('display', 'none');
     $('.has-cached-user-info').css('display', 'block');
-    //userLabel.attr('href', 'app/#/user/edit/' + id);
     userLabel.children('span').text(name);
     userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
@@ -70,6 +69,15 @@ var userAuth = {
       $('.form-group').removeClass("has-error");
     })
 
+  },
+  noAccountButtonClicked: function () {
+    $('#no-account').click(function (e) {
+      e.preventDefault();
+      $('#msg').hide("fast");
+      $('.form-group').removeClass("has-error");
+      $('.login-related').addClass('hidden');
+      $('.register-related').removeClass('hidden');
+    })
   },
   emailRegex: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/,
 
@@ -123,7 +131,7 @@ var userAuth = {
   },
 
   loginFormSubmit: function () {
-    $('#login-submit').click(function(e){
+    $('#login-form').submit(function(e){
       e.preventDefault();
       $('.form-group').removeClass("has-error");
       $('#msg').hide("fast");
@@ -144,6 +152,7 @@ var userAuth = {
         $('#msg').show("slow").html("Password cannot be blank!");
         return;
       }
+      $('.button-loading-img').removeClass('invisible');
 
       var postData_login = $('#login-form').serialize();
 
@@ -154,6 +163,7 @@ var userAuth = {
         data:postData_login,
         dataType:"json",
         success:function(data){
+          $('.button-loading-img').addClass('invisible');
           console.log($('#login-form').serialize());
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
@@ -163,7 +173,6 @@ var userAuth = {
           $('#register').hide();
           $('#login').hide();
           var userHref = $('#user-label').attr('href');
-          //$('#user-label').attr("href",userHref + obj.userId);
 
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
@@ -171,6 +180,8 @@ var userAuth = {
           $('#login-modal').modal('hide');
         },
         error:function(){
+          $('.button-loading-img').addClass('invisible');
+
           //alert("aa");
         }
 

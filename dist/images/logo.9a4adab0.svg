@@ -1,0 +1,14 @@
+
+  <svg id="svg_8" width="170" height="40" viewBox="0 0 342 82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+   <g>
+    <title>background</title>
+    <rect fill="none" id="canvas_background" height="82" width="342" y="-1" x="-1"/>
+   </g>
+   <g>
+    <title>Layer 1</title>
+    <path id="svg_1" d="m60.600006,31.299988l0,36c0,3.899994 -3.099991,7 -7,7l-35.999992,0c-3.900002,0 -7,-3.100006 -7,-7l0,-36c0,-3.899994 3.099998,-7 7,-7l35.999992,0c3.799988,0 7,3.200012 7,7z" fill="#A7A9AC"/>
+    <path id="svg_2" d="m65.899994,41.299988l-25.5,25.5c-2.699997,2.700012 -7.200005,2.700012 -9.900002,0l-25.5,-25.5c-2.700005,-2.700012 -2.700005,-7.200012 0,-9.899994l25.5,-25.5c2.699997,-2.700012 7.200005,-2.700012 9.900002,0l25.5,25.5c2.800003,2.800018 2.800003,7.200012 0,9.899994z" fill="#A7A9AC"/>
+    <text x="-94" y="-307" id="svg_3" font-size="50" font-family="'HelveticaNeue-Bold'" fill="#A7A9AC" transform="matrix(1,0,0,1,157.7499,376.3333) ">oomHunter</text>
+    <text x="-94" y="-307" id="svg_4" font-size="70" font-family="'HelveticaNeue-Bold'" fill="#ffffff"  transform="matrix(1,0,0,1,127.4146,376.707) ">r</text>
+   </g>
+  </svg>

@@ -166,7 +166,6 @@ var userAuth = {
         dataType:"json",
         success:function(data){
           $('.button-loading-img').addClass('invisible');
-          console.log($('#login-form').serialize());
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
@@ -181,8 +180,6 @@ var userAuth = {
         },
         error:function(){
           $('.button-loading-img').addClass('invisible');
-
-          //alert("aa");
         }
 
       });
@@ -198,7 +195,7 @@ var userAuth = {
       localStorage.removeItem("firstName");
       $('#register').show();
       $('#login').show();
-      $('.has-cached-user-info').css('display', 'none');
+      $('.has-cached-user-info').hide();
       var postData = {
         userToken: userToken
       };

@@ -17,11 +17,9 @@ $( document ).ready(function() {
   helpContact.showHideDropdown();
 
   userAuth.loginButtonClicked();
-  userAuth.registerButtonClicked();
   userAuth.forgetPwdButtonClicked();
   userAuth.loginFormSubmit();
   userAuth.logOut();
-  userAuth.registerFormSubmit();
   userAuth.forgetPwdFormSubmit();
   userAuth.noAccountButtonClicked();
 

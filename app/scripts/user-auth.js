@@ -166,14 +166,14 @@ var userAuth = {
         dataType:"json",
         success:function(data){
           $('.button-loading-img').addClass('invisible');
-          console.log($('#login-form').serialize());
           var obj = eval(data.data);
           localStorage.setItem('userToken',obj.userToken);
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
-          $('#register').hide();
-          $('#login').hide();
+          //$('#register').hide();
+          //$('#login').hide();
+          $('.none-cached-user-info').hide();
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
@@ -181,8 +181,6 @@ var userAuth = {
         },
         error:function(){
           $('.button-loading-img').addClass('invisible');
-
-          //alert("aa");
         }
 
       });
@@ -196,9 +194,10 @@ var userAuth = {
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
       localStorage.removeItem("firstName");
-      $('#register').show();
-      $('#login').show();
-      $('.has-cached-user-info').css('display', 'none');
+      //$('#register').show();
+      //$('#login').show();
+      $('.has-cached-user-info').hide();
+      $('.none-cached-user-info').show();
       var postData = {
         userToken: userToken
       };
@@ -232,7 +231,7 @@ var userAuth = {
       $('.button-loading-img').removeClass('invisible');
       $.ajax({
         cache:true,
-        type:"POST",
+        type:"GET",
         url:host_url,
         data:$('#forgetPwd-form').serialize(),
         dataType:"json",

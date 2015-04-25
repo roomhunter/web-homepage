@@ -299,7 +299,7 @@ a.popular-university-container {
 .university-name {
   margin: 0;
   height: 100%;
-  padding: 105px 0;
+  /*padding: 105px 0;*/
   vertical-align: middle;
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -314,6 +314,9 @@ a.popular-university-container {
 }
 .university-name > h2 {
   margin: auto 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .most-popular .school-name {
   margin-top: 0;

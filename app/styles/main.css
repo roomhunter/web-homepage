@@ -40,6 +40,10 @@ h1, h2, h3, h4, h5, h6 {
 .header h3 img{
   max-height: 40px;
 }
+.logo-container {
+  display: inline-block;
+  position: relative;
+}
 .navbar-right {
   float: right !important;
   margin-right: -15px;

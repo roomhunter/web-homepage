@@ -386,10 +386,10 @@ a.popular-university-container {
   text-align:center
 }
 .signup-or-separator .text {
-  background-color:#FFF;
+  background-color:#f9f7f4;
   display:inline-block;
   margin:0;
-  padding:12px
+  padding:8px
 }
 
 .signup-or-separator hr {
@@ -405,7 +405,7 @@ a.popular-university-container {
 
 .submit-button{
   width:130px;
-  background-color: #00A693;
+  background-color: #f7991e;
   position: relative;
 }
 .button-loading-img {
@@ -434,6 +434,9 @@ a.popular-university-container {
   width: 300px;
 }
 
+.modal-body{
+  background-color: #f9f7f4;
+}
 
 .modal-dialog{
   width: 30%;
@@ -498,6 +501,38 @@ a.popular-university-container {
   }
 }
 
+.text-18{
+  font-size: 18px;
+}
+
+.text-20{
+  font-size: 20px;
+}
+
+.padding-up-5{
+  padding-bottom: 10px;
+}
+
+h5.register-related{
+  margin-bottom: 0px;
+}
+
+h5.login-related{
+  margin-bottom: 0px;
+}
+
+.text-link{
+  text-decoration: none;
+  color: #f7991e
+}
+
+.alert{
+  background-color: #f9f7f4;
+}
+
+.text-button{
+  color: #f5f5f5
+}
 
 
 

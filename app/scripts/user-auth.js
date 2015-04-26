@@ -171,8 +171,6 @@ var userAuth = {
           localStorage.setItem('userId',obj.userId);
           localStorage.setItem('firstName',obj.firstName);
           localStorage.setItem('userAvatar',obj.userAvatar);
-          //$('#register').hide();
-          //$('#login').hide();
           $('.none-cached-user-info').hide();
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
@@ -194,10 +192,9 @@ var userAuth = {
       localStorage.removeItem("userId");
       localStorage.removeItem("userAvatar");
       localStorage.removeItem("firstName");
-      //$('#register').show();
-      //$('#login').show();
       $('.has-cached-user-info').hide();
       $('.none-cached-user-info').show();
+      $('#login').show();
       var postData = {
         userToken: userToken
       };

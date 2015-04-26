@@ -55,8 +55,8 @@ var weixinLogin = {
           localStorage.setItem("userAvatar", obj.userAvatar);
           localStorage.setItem("userToken", obj.userToken);
           localStorage.setItem("firstName", obj.firstName)
-          var userHref = $('#user-label').attr('href');
-          $('#user-label').attr("href",userHref + obj.userId);
+          //var userHref = $('#user-label').attr('href');
+          //$('#user-label').attr("href",userHref + obj.userId);
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();

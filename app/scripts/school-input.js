@@ -55,7 +55,7 @@ schoolInput = {
       }
 
       e.preventDefault();
-      localStorage.setItem('lastSearch', input);
+      localStorage.setItem('toSchool', input);
       window.location = 'app/#/list/' + url;
     });
 
@@ -103,7 +103,7 @@ schoolInput = {
         if (!url) {
           return false;
         }
-        localStorage.setItem('lastSearch', input);
+        localStorage.setItem('toSchool', input);
         window.location = 'app/#/list/' + url;
       })
       .on('typeahead:cursorchanged', function () {

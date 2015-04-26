@@ -299,7 +299,7 @@ a.popular-university-container {
 .university-name {
   margin: 0;
   height: 100%;
-  padding: 105px 0;
+  /*padding: 105px 0;*/
   vertical-align: middle;
   background: rgba(0, 0, 0, 0.3);
   color: #fff;
@@ -314,6 +314,9 @@ a.popular-university-container {
 }
 .university-name > h2 {
   margin: auto 0;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .most-popular .school-name {
   margin-top: 0;
@@ -326,16 +329,31 @@ a.popular-university-container {
   text-decoration: none;
 }
 .columbia-card {
-  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/fcf6f264671c3b1ae5598a4de993e9cb.jpg");
+  background-image: url("../images/columbia.jpeg");
 }
 .nyu-card {
-  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/c77b894d311321ee26773dcb5a912fa1.jpg");
+  background-image: url("../images/nyu.jpg");
 }
-.stony-card {
-  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/0a0869cc544a836bc80b1a4570474941.jpg");
+.fit-card {
+  background-image: url("../images/fit.jpg");
+}
+.fordham-card {
+  background-image: url("../images/fordham.jpeg");
+}
+.nyit-card {
+  background-image: url("../images/nyit.jpeg");
+}
+.nyu-poly-card {
+  background-image: url("../images/nyu-poly.jpg");
+}
+.parsons-card {
+  background-image: url("../images/parsons.jpg");
+}
+.pratt-card {
+  background-image: url("../images/pratt.jpg");
 }
 .cuny-card {
-  background-image: url("https://roomhunter-images.b0.upaiyun.com/apartments/e3d16ac1534c34d56024b5237f709e27.jpg");
+  background-image: url("../images/cuny.jpg");
 }
 
 .footer {

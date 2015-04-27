@@ -80,6 +80,14 @@ var userAuth = {
       $('.register-related').removeClass('hidden');
     })
   },
+  returnToLoginButtonClicked: function () {
+    $('#return-to-login').click(function (e) {
+      e.preventDefault();
+      $('.login-related').removeClass('hidden');
+      $('.register-related').addClass('hidden');
+    })
+  },
+
   emailRegex: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/,
 
   //registerFormSubmit: function () {

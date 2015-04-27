@@ -22,4 +22,5 @@ $( document ).ready(function() {
   userAuth.logOut();
   userAuth.forgetPwdFormSubmit();
   userAuth.noAccountButtonClicked();
+  userAuth.returnToLoginButtonClicked();
 });

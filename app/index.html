@@ -2,10 +2,10 @@
 <html class="no-js" xmlns="http://www.w3.org/1999/html">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>RoomHunter</title>
     <meta name="description" content="a">
     <meta name="viewport" content="width=device-width">
-    <link rel="shortcut icon" type="image/x-icon" href="favicon-cyan.ico">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
     <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Raleway:700,400,200' type='text/css'>
     <!-- build:css({.,app,.tmp}) styles/vendor.css -->
@@ -25,11 +25,6 @@
       <div class="container">
         <div class="header">
           <ul class="nav navbar-nav navbar-right rh-nav">
-            <li class="lang-switch">
-              <a href="#" class="en hidden" id="switch-zh"><i class="icon-roomhunter-language"></i>&nbsp;中文</a>
-              <a href="#" class="zh invisible" id="switch-en"><i class="icon-roomhunter-language"></i>&nbsp;English</a>
-            </li>
-
             <li class="none-cached-user-info">
               <a href="#login-modal" id="login">
                 <i class="icon-roomhunter-power"></i>
@@ -68,8 +63,12 @@
                 </li>
               </ul>
             </li>
+            <li class="lang-switch">
+              <a href="#" class="en hidden" id="switch-zh"><i class="icon-roomhunter-language"></i>&nbsp;中文</a>
+              <a href="#" class="zh invisible" id="switch-en"><i class="icon-roomhunter-language"></i>&nbsp;English</a>
+            </li>
           </ul>
-          <a href="/" class="logo-container"><h3 class="logo"><img src="images/v3-white.png"></h3></a>
+          <a href="/" class="logo-container"><h3 class="logo"><img src="images/logo.png"></h3></a>
 
           <div class="alert text-link" role="alert" id="alertMessageToRegister">
             <span> Please register your personal information. The page is automatically redirected after 3 seconds</span>
@@ -78,8 +77,6 @@
 
         </div>
       </div>
-
-
       <!-- modal for login and register-->
       <div class="modal fade" id="login-modal" tabindex="-a" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -246,8 +243,8 @@
           <div class="university-input" >
             <form id="query-form">
               <input id="search-str" type="text" class="form-control university-typeahead" placeholder="">
-              <button class="btn btn-blue" type="submit" id="search-btn">
-                <i class="icon-roomhunter-search"></i>
+              <button class="btn btn-orange" type="submit" id="search-btn">
+                <!--<i class="icon-roomhunter-search"></i>-->
                 <span class="en hidden">Go</span>
                 <span class="zh invisible">搜索</span>
               </button>

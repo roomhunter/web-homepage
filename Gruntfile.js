@@ -176,6 +176,8 @@ module.exports = function (grunt) {
     usemin: {
       html: '<%= path.dist %>/*.html',
       css: '<%= path.dist %>/styles/*.css',
+      //js: '<%= path.dist %>/scripts/*.js',
+
       options: {
         assetsDirs: ['<%= path.dist %>','<%= path.dist %>/images']
       }
@@ -186,7 +188,7 @@ module.exports = function (grunt) {
         files: [{
           expand: true,
           cwd: '<%= path.app %>/images',
-          src: '*.{png,jpg,jpeg,gif}',
+          src: ['*.{png,jpg,jpeg,gif}'],
           dest: '<%= path.dist %>/images'
         }]
       }
@@ -237,7 +239,7 @@ module.exports = function (grunt) {
           expand: true,
           cwd: '<%= path.app %>/images',
           dest: '<%= path.dist %>/images',
-          src: '*.svg'
+          src: ['*.svg']
         }]
       },
       styles: {

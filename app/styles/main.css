@@ -38,7 +38,7 @@ h1, h2, h3, h4, h5, h6 {
   padding-bottom: 19px;
 }
 .header h3 img{
-  max-height: 40px;
+  max-height: 34px;
 }
 .logo-container {
   display: inline-block;
@@ -244,7 +244,7 @@ h1, h2, h3, h4, h5, h6 {
   margin: 30px 0;
 }
 .most-popular {
-  background-color: #f7f7f7;
+  background-color: #f9f7f4;
   min-height: 400px;
   padding-top: 40px;
   padding-bottom: 60px;
@@ -373,29 +373,21 @@ a.popular-university-container {
 .company-info a {
   color: #fff;
 }
-/*a.beian {*/
-  /*color: #ffffff;*/
-/*}*/
 
-.btn-cyan-theme {
-  background-color: #23B5A4;
-  border-color: #1F9E8F;
+.btn-orange {
+  background-color: #f7991e;
 }
-.btn-blue {
-  background-color: #4E8EF7;
-}
-.btn-blue:hover, .btn-blue:focus {
+.btn-orange:hover, .btn-orange:focus {
   color: #fff;
-  background-color: #69A1FD;
+  background-color: #F7A943;
 }
-.btn-blue.disabled {
+.btn-orange.disabled {
   opacity: 1;
   background-color: #A6A6A6;
 }
-.btn-blue.disabled:focus {
+.btn-orange.disabled:focus {
 
 }
-
 
 .signup-or-separator {
   background:none;
@@ -461,8 +453,10 @@ a.popular-university-container {
 }
 
 #user-avatar{
-  width:36px;
-  height:36px;
+  width: 25px;
+  height: 25px;
+  margin-right: 5px;
+  margin-bottom: 2px;
 }
 
 .navbar-nav > li > a{

@@ -125,4 +125,12 @@
 .icon-roomhunter-arrow-down:before {
   content: "\e012";
 }
-
+.icon-roomhunter-share:before {
+  content: "\e013";
+}
+.icon-roomhunter-flash:before {
+  content: "\e014";
+}
+.icon-roomhunter-frown:before {
+  content: "\e016";
+}

@@ -97,7 +97,7 @@ schoolInput = {
         templates: {
           empty: [
             '<div class="tt-empty-message text-muted">',
-            '<i class="icon-frown"></i>',
+            '<i class="icon-roomhunter-frown"></i>',
             emptyMessage,
             '</div>'
           ].join('\n'),

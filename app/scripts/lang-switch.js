@@ -5,7 +5,6 @@ var langSwitch = {
     $('.zh').addClass('hidden');
     $('.en').removeClass('hidden');
     $('.en').removeClass('invisible');
-    $('title').text('Apartment Hunting');
     $('#search-str').attr('placeholder', 'I will go to...');
     $('#login-submit').attr('value', 'Login');
     $('#forgetPwd-submit').attr('value', '发送邮件');
@@ -15,7 +14,6 @@ var langSwitch = {
     $('.en').addClass('hidden');
     $('.zh').removeClass('hidden');
     $('.zh').removeClass('invisible');
-    $('title').text('美国留学租房');
     $('#search-str').attr('placeholder', '输入学校查找附近住房');
     $('#login-submit').attr('value', '登录');
     $('#forgetPwd-submit').attr('value', '帮我重设');

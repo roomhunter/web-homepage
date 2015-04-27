@@ -23,4 +23,5 @@ Tasks
     - [x] Aliyun CDN sucks, use upyun instead, deprecate Aliyun whenever possible
   - [x] switch source based on request IP address(done), will test will Laoban Hu
 - [x] css, js, fonts distributed by geo-cognitive CDNs
+- [ ] js 那边几个图片资源现在写死了
   

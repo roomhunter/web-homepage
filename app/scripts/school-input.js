@@ -26,19 +26,39 @@ var substringMatcher = function(strs) {
 var universityMap = {
   'Columbia University': {
     token: 'columbia',
-    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/030972072134d06caef7867d83ca027c.jpeg'
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/columbia-icon.jpeg'
   },
   'New York University': {
     token: 'nyu',
-    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/35ad361d583743f33bbe0b276a84a142.jpg'
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/nyu-icon.jpg'
   },
-  'Stony Brook University': {
-    token: 'stony',
-    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/44291985f3ea88a843917730ce6537e2.jpeg'
+  'Fordham University': {
+    token: 'fordham',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/fordham-icon.jpg'
+  },
+  'Parsons The New School': {
+    token: 'parsons',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/parsons-icon.png'
   },
   'City University of New York': {
     token: 'cuny',
-    img: 'https://roomhunter-images.b0.upaiyun.com/apartments/9ac2e000c2e38fe7b16af83874292d62.png'
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/cuny-icon.png'
+  },
+  'Fashion Institute of Technology': {
+    token: 'fit',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/fit-icon.gif'
+  },
+  'New York Institute of Technology': {
+    token: 'nyit',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/nyit-icon.jpg'
+  },
+  'Pratt Institute': {
+    token: 'pratt',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/pratt-icon.jpg'
+  },
+  'Pace University': {
+    token: 'pace',
+    img: 'https://d1mnrj0eye9ccu.cloudfront.net/images/pace-icon.jpg'
   }
 };
 
@@ -77,7 +97,7 @@ schoolInput = {
         templates: {
           empty: [
             '<div class="tt-empty-message text-muted">',
-            '<i class="icon-frown"></i>',
+            '<i class="icon-roomhunter-frown"></i>',
             emptyMessage,
             '</div>'
           ].join('\n'),

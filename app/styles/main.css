@@ -533,7 +533,7 @@ h5.login-related{
   margin-bottom: 0px;
 }
 
-.text-link{
+.text-link, .error-message{
   text-decoration: none;
   color: #f7991e
 }
@@ -545,6 +545,7 @@ h5.login-related{
 .text-button{
   color: #f5f5f5
 }
+
 
 
 

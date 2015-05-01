@@ -67,12 +67,10 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 .help-dropdown .divider {
-  margin: 5px 0;
+  /*margin: 5px 0;*/
 }
 .navbar-nav > li > .help-dropdown {
   border-radius: 3px;
-  right: 0;
-  left: auto;
 }
   /*.nav .help-contact*/
 .video {

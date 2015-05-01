@@ -27,6 +27,7 @@ var userAuth = {
     userLabel.children('span').text(name);
     userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
+
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
     var id = localStorage.getItem('userId');
@@ -41,22 +42,20 @@ var userAuth = {
     }
   },
 
-  //registerButtonClicked: function () {
-  //  $('#register').click(function (e) {
-  //    e.preventDefault();
-  //    $('#login-modal').modal('show');
-  //    $('#msg').hide("fast");
-  //    $('.form-group').removeClass("has-error");
-  //    $('.login-related').addClass('hidden');
-  //    $('.register-related').removeClass('hidden');
-  //  });
-  //},
+  registerButtonClicked: function () {
+    $('#register').click(function (e) {
+      e.preventDefault();
+      $('#login-modal').modal('show');
+      $('.form-group').removeClass("has-error");
+      $('.register-related').removeClass('hidden');
+      $('.login-related').addClass('hidden');
+    });
+  },
 
   loginButtonClicked: function () {
     $('#login').click(function (e) {
       e.preventDefault();
       $('#login-modal').modal('show');
-      $('#msg').hide("fast");
       $('.form-group').removeClass("has-error");
       $('.register-related').addClass('hidden');
       $('.login-related').removeClass('hidden');
@@ -74,7 +73,6 @@ var userAuth = {
   noAccountButtonClicked: function () {
     $('#no-account').click(function (e) {
       e.preventDefault();
-      $('#msg').hide("fast");
       $('.form-group').removeClass("has-error");
       $('.login-related').addClass('hidden');
       $('.register-related').removeClass('hidden');
@@ -90,78 +88,14 @@ var userAuth = {
 
   emailRegex: /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+(.[a-zA-Z0-9_-])+/,
 
-  //registerFormSubmit: function () {
-  //  $('#msg').hide("fast");
-  //  $('#register-submit').click(function () {
-  //    $('.form-group').removeClass("has-error");
-  //    var host_url = userAuth.apiHost() + 'users/register';
-  //    var email = $('#emailaddress').val();
-  //    var pwd = $('#password').val();
-  //    var firstname = $('#firstName').val();
-  //    var lastname = $('#lastName').val();
-  //    if (email == "" || pwd == ""||firstname==""||lastname=="") {
-  //      $('.form-group').addClass("has-error");
-  //      $('#msg').show("slow").html("The following fields cannot be blank!");
-  //      return;
-  //    }
-  //    if (!userAuth.emailRegex.test(email)) {
-  //      $('.email-form-group').addClass("has-error");
-  //      $('#msg').show("slow").html("Invalid email address!");
-  //      return;
-  //    };
-  //    <!-- use ajax to submit -->
-  //    var postData_register = $('#register-form').serialize();
-  //    $.ajax({
-  //      cache:true,
-  //      type:"POST",
-  //      url:host_url,
-  //      data:postData_register,
-  //      dataType:"json",
-  //      success:function(data){
-  //        var obj = eval(data.data);
-  //        localStorage.setItem('userToken',obj.userToken);
-  //        localStorage.setItem('userId',obj.userId);
-  //        localStorage.setItem('firstName',obj.firstName);
-  //        localStorage.setItem('userAvatar',obj.userAvatar);
-  //        $('#register').hide();
-  //        $('#login').hide();
-  //        var userHref = $('#user-label').attr('href');
-  //        $('#user-label').attr("href",userHref + obj.userId);
-  //        $('#user-name').text(obj.firstName);
-  //        $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
-  //        $('.has-cached-user-info').show();
-  //        $('#register-modal').modal('hide');
-  //      },
-  //      error:function(){
-  //        //alert("aa");
-  //      }
-  //    })
-  //  })
-  //},
-
 
   loginFormSubmit: function () {
     $('#login-form').submit(function(e){
       e.preventDefault();
       $('.form-group').removeClass("has-error");
-      $('#msg').hide("fast");
       var host_url = userAuth.apiHost() + 'users/login';
       var email = $('#emailaddress').val();
       var pwd = $('#password').val();
-      if(email==""&&pwd=="") {
-        $('.form-group').addClass("has-error");
-        $('#msg').show("slow").html("The following fields cannot be blank!");
-        return;
-      }
-      else if(!userAuth.emailRegex.test(email)) {
-        $('.email-form-group').addClass("has-error");
-        $('#msg').show("slow").html("Invalid email address!");
-        return;
-      }
-      else if(pwd=="") {
-        $('#msg').show("slow").html("Password cannot be blank!");
-        return;
-      }
       $('.button-loading-img').removeClass('invisible');
 
       var postData_login = $('#login-form').serialize();
@@ -185,13 +119,27 @@ var userAuth = {
           $('.has-cached-user-info').show();
           $('#login-modal').modal('hide');
         },
-        error:function(){
+        error:function(data){
           $('.button-loading-img').addClass('invisible');
+          if(data.error.code = 404){
+            $('#msg').show("fast").html("Invalid email or password");
+            setTimeout(function(){
+              $('#msg').hide("fast");
+            }, 3000);
+          }
+          else{
+            $('#msg').show("fast").html("Invalid login");
+            setTimeout(function(){
+              $('#msg').hide("fast");
+            }, 3000);
+          }
         }
 
       });
     })
   },
+
+
   logOut: function () {
     $('#logout').click(function (e) {
       e.preventDefault();
@@ -246,9 +194,22 @@ var userAuth = {
           $('#alertMessage').show();
           setTimeout("$('#alertMessage').hide()",5000);
         },
-        error:function(){
+        error:function(data){
           console.log("error");
           $('.button-loading-img').addClass('invisible');
+          if(data.error.code = 404){
+            $('#msg2').show("fast").html("Invalid email");
+            setTimeout(function(){
+              $('#msg2').hide("fast");
+            }, 3000);
+          }
+          else{
+            $('#msg2').show("fast").html("Invalid email");
+            setTimeout(function(){
+              $('#msg2').hide("fast");
+            }, 3000);
+          }
+
         }
 
       })

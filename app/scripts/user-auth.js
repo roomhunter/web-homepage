@@ -27,6 +27,7 @@ var userAuth = {
     userLabel.children('span').text(name);
     userLabel.children('img').attr('src', avatar+"!userSmallAvatar");
   },
+
   initAuthViewWithCachedInfo: function () {
     var t = localStorage.getItem('userToken');
     var id = localStorage.getItem('userId');
@@ -39,6 +40,16 @@ var userAuth = {
     else {
       userAuth.displayRegisterAndLogin()
     }
+  },
+
+  registerButtonClicked: function () {
+    $('#register').click(function (e) {
+      e.preventDefault();
+      $('#login-modal').modal('show');
+      $('.form-group').removeClass("has-error");
+      $('.register-related').removeClass('hidden');
+      $('.login-related').addClass('hidden');
+    });
   },
 
   loginButtonClicked: function () {

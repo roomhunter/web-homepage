@@ -11,7 +11,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 #s1-wrapper {
   position: relative;
-  padding-bottom: 42.55%;
+  padding-bottom: 50%;
 }
 .text-light {
   font-weight: 200;
@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
 video {
   position: absolute;
   /* tricky part: video is 2.35:1, height = 42.55%, original size = 9/16 = 56.25%, top = (56.25 - 42.55)/42.55 = 16.1 */
-  top: -16.1%;
+  top: -7.3%;
   width: 100%;
 }
 

@@ -83,7 +83,6 @@
 
       <div class="video-wrapper">
         <video autoplay="true" loop="loop" preload="none" id="roomhunter-video" class="hidden-xs">
-          <!--<source src="http://roomhunter-static.b0.upaiyun.com/video/2.mp4" type='video/mp4'>-->
           <source id="video-source" src="https://d1mnrj0eye9ccu.cloudfront.net/video/1.mp4" type='video/mp4'>
         </video>
         <script>
@@ -100,9 +99,20 @@
       <div class="search-area">
         <div class="head-line">
           <h1 class="text-uppercase">
-            <span class="zh invisible title-zh">此心安处是吾乡</span>
+            <!--<span class="zh invisible title-zh">此心安处是吾乡</span>-->
+            <span class="zh invisible title-zh" id="title-zh">房子,还有诗和远方</span>
             <span class="en hidden title-en">Home &nbsp;is &nbsp;People</span>
           </h1>
+          <script>
+            var title = document.getElementById('title-zh');
+            if (Math.random() < 0.5) {
+              title.innerText = "房子,还有诗和远方";
+              title.classList.add("title-zh-2");
+            }
+            else {
+              title.innerText = "此心安处是吾乡";
+            }
+          </script>
           <h4>
             <span class="bottom-line-zh text-light zh invisible"> 邂逅志趣相投的室友, 发现称心如意的住房</span>
             <span class="bottom-line-en text-light en hidden">Meet congenial roommates, Find desirable apartments</span>

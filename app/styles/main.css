@@ -364,6 +364,27 @@ a.popular-university-container {
   margin-bottom: 0px;
 }
 
+.bounce-heart {
+  font-size: 85%;
+}
+@-webkit-keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {-webkit-transform: translateY(0);}
+  40% {-webkit-transform: translateY(-15px);}
+  60% {-webkit-transform: translateY(-8px);}
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+  40% {transform: translateY(-15px);}
+  60% {transform: translateY(-8px);}
+}
+
+.footer:hover .bounce-heart {
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-name: bounce;
+  animation-name: bounce;
+}
+
 .company-info a {
   color: #fff;
 }

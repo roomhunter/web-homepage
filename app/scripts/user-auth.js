@@ -3,7 +3,7 @@
 var userAuth = {
 
   apiHost: function () {
-    return location.hostname === 'roomhunter.us' ? 'https://api.roomhunter.us/v1' : 'https://test.roomhunter.us:3100/v1/';
+    return location.hostname === 'roomhunter.us' ? 'https://api.roomhunter.us/v1/' : 'https://test.roomhunter.us:3100/v1/';
   },
   redirectHost: function () {
     return location.hostname === 'roomhunter.us' ? "https://roomhunter.us" : "https://test.roomhunter.us";

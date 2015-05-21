@@ -4,9 +4,9 @@
   font-family: "roomhunter";
   src:url("../fonts/roomhunter.eot");
   src:url("../fonts/roomhunter.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/roomhunter.woff") format("woff"),
-    url("../fonts/roomhunter.ttf") format("truetype"),
-    url("../fonts/roomhunter.svg#roomhunter") format("svg");
+  url("../fonts/roomhunter.woff") format("woff"),
+  url("../fonts/roomhunter.ttf") format("truetype"),
+  url("../fonts/roomhunter.svg#roomhunter") format("svg");
   font-weight: normal;
   font-style: normal;
 
@@ -33,12 +33,21 @@
   margin-left: .2em;
   margin-right: .2em;
   text-align: center;
-   /*opacity: .8;*/
+  /*opacity: .8;*/
 
   /*-webkit-font-smoothing: antialiased;*/
   /*-moz-osx-font-smoothing: grayscale;*/
 }
-
+.icon-2-5x {
+  font-size: 2.5em;
+  vertical-align: -0.2em;
+}
+.icon-3x {
+  font-size: 3em;
+}
+.icon-4x {
+  font-size: 4em;
+}
 .icon-spin {
   -webkit-transform-origin: 50% 58%;
   transform-origin:50% 58%;
@@ -67,7 +76,6 @@
     transform: rotate(359deg);
   }
 }
-
 .icon-roomhunter-arrow-left:before {
   content: "\e000";
 }
@@ -77,13 +85,13 @@
 .icon-roomhunter-gender:before {
   content: "\e002";
 }
-.icon-roomhunter-drink:before {
+.icon-roomhunter-drinking:before {
   content: "\e003";
 }
-.icon-roomhunter-cook:before {
+.icon-roomhunter-cooking:before {
   content: "\e004";
 }
-.icon-roomhunter-clean:before {
+.icon-roomhunter-cleaning:before {
   content: "\e005";
 }
 .icon-roomhunter-cash:before {
@@ -110,7 +118,7 @@
 .icon-roomhunter-power:before {
   content: "\e00d";
 }
-.icon-roomhunter-smoke:before {
+.icon-roomhunter-smoking:before {
   content: "\e00e";
 }
 .icon-roomhunter-help:before {
@@ -131,6 +139,42 @@
 .icon-roomhunter-flash:before {
   content: "\e014";
 }
+.icon-roomhunter-upload:before {
+  content: "\e015";
+}
 .icon-roomhunter-frown:before {
   content: "\e016";
+}
+.icon-roomhunter-check:before {
+  content: "\e017";
+}
+.icon-roomhunter-cancel:before {
+  content: "\e018";
+}
+.icon-roomhunter-plus:before {
+  content: "\e019";
+}
+.icon-roomhunter-minus:before {
+  content: "\e01a";
+}
+.icon-roomhunter-calendar:before {
+  content: "\e01b";
+}
+.icon-roomhunter-dog:before {
+  content: "\e01c";
+}
+.icon-roomhunter-clip:before {
+  content: "\e01d";
+}
+.icon-roomhunter-clip-o:before {
+  content: "\e01e";
+}
+.icon-roomhunter-wechat:before {
+  content: "\e01f";
+}
+.icon-roomhunter-register:before {
+  content: "\e020";
+}
+.icon-roomhunter-heart:before {
+  content: "\e021";
 }

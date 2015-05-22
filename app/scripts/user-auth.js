@@ -95,6 +95,7 @@ var userAuth = {
 
   loginFormSubmit: function () {
     $('#login-form').submit(function(e){
+      $('#login-submit').addClass('disabled');
       e.preventDefault();
       $('.form-group').removeClass("has-error");
       var host_url = userAuth.apiHost() + 'users/login';
@@ -121,6 +122,7 @@ var userAuth = {
           $('#user-name').text(obj.firstName);
           $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
           $('.has-cached-user-info').show();
+          $('#login-submit').removeClass('disabled');
           $('#login-modal').modal('hide');
         },
         error:function(data){

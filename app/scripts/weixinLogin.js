@@ -66,8 +66,7 @@ var weixinLogin = {
 
           //check if the user need to register for other information
           if(data.error.code == 201){
-            $('#alertMessageToRegister').show();
-            setTimeout("window.location.href = userAuth.redirectHost() + '/app/#/user/register-remaining-info'",3000);
+            setTimeout("window.location.href = userAuth.redirectHost() + '/app/#/user/register-remaining-info'",500);
           }
         },
         error: function () {

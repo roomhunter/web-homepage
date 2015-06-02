@@ -371,7 +371,8 @@ a.popular-university-container {
   padding-bottom: 200%;
 }
 .how-it-works-image {
-  padding-bottom: 120%;
+  margin: -20px;
+  padding-bottom: 130%;
   background-repeat: no-repeat;
   background-size: contain;
   background-position: 50%;
@@ -386,7 +387,7 @@ a.popular-university-container {
   background-image: url("../images/apartment-here.png");
 }
 .how-it-works-text {
-  padding-bottom: 90%;
+  padding-bottom: 100%;
   position: relative;
 }
 
@@ -414,10 +415,10 @@ a.popular-university-container {
 }
 @media (max-width: 991px) {
   .how-it-works-image {
-    padding-bottom: 130%;
+    padding-bottom: 150%;
   }
   .how-it-works-text {
-    padding-bottom: 110%;
+    padding-bottom: 120%;
     font-size: 0.75em;
   }
   .how-it-works-text > div > h3 {

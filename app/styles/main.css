@@ -405,6 +405,9 @@ a.popular-university-container {
   margin-bottom: 20px;
   font-size: 22px;
 }
+.how-it-works-text > div > h3.zh {
+  font-size: 20.5px;
+}
 .how-it-works-text > div > p {
   text-align: left;
   font-weight: 200;

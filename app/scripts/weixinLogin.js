@@ -6,8 +6,6 @@
 var weixinLogin = {
 
   initialization: function () {
-
-
     var appId = location.hostname === 'roomhunter.us' ? "wxdae4b852477cf03b" : "wxc685011a4fb095bd";
     var redirect_url = userAuth.redirectHost();
     var requestUserInfoUrl = userAuth.apiHost()+"users/wechat/login";
@@ -22,7 +20,6 @@ var weixinLogin = {
       style: "black",
       href: twoDCodeBoxStyleFile
     });
-
 
     //limit the height of wechat 2D code
     $("iframe").each(function () {
@@ -59,14 +56,14 @@ var weixinLogin = {
           //var userHref = $('#user-label').attr('href');
           //$('#user-label').attr("href",userHref + obj.userId);
           $('#user-name').text(obj.firstName);
-          $('#user-avatar').attr("src",obj.userAvatar+"!userSmallAvatar");
+          $('#user-avatar').attr("src", obj.userAvatar + "!userSmallAvatar");
           $('.has-cached-user-info').show();
           $('#register').hide();
           $('#login').hide();
 
           //check if the user need to register for other information
-          if(data.error.code == 201){
-            setTimeout("window.location.href = userAuth.redirectHost() + '/app/#/user/register-remaining-info'",500);
+          if(data.error.code == 201) {
+            setTimeout("window.location.href = userAuth.redirectHost() + '/app/#/user/register/account'",500);
           }
         },
         error: function () {
@@ -79,8 +76,6 @@ var weixinLogin = {
     else {
       console.log("no code here");
     }
-
-
   }
 }
 

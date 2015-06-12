@@ -157,6 +157,7 @@ var userAuth = {
       $('.has-cached-user-info').hide();
       $('.none-cached-user-info').show();
       $('#login').show();
+      $('#register').show();
       var postData = {
         userToken: userToken
       };

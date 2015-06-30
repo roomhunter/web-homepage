@@ -650,7 +650,9 @@ h5.login-related{
 .margin-bottom-5 {
   margin: 0 auto 5px auto !important;
 }
-
+.customer-service {
+  display: none;
+}
 
 
 
